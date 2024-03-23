@@ -1,0 +1,15 @@
+Lespagnol Killian, Tribouillois Julien
+
+Cette application a été réalisé dans le cadre d'un projet universitaire. Elle a pour but de donner des information sur un personnage du jeux Leagues of Legends
+choisi par l'utilisateur.
+
+Il va donc devoir indiquer plusieurs information tel que :
+
+- le style de la partie,
+- le nom de son personnage,
+- son role (top, mid, jungle, adc, support),
+- son adversaire,
+- si il est adc ou support, le perso de son coéquipier,
+
+Enfin l'utilisateur, aura ensuite une page avec les runes, les items et l'ordre des compétences à prendre. Il pourra ensuite mettre en favori son role et son perso.
+Si le joueur est plus expérimenter nous pouvons faire une version où un personnage est indiqué en focntion de son équipe afin de mieux s'y adapter.
