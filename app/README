@@ -1,15 +1,15 @@
 Lespagnol Killian, Tribouillois Julien
 
-Cette application a été réalisé dans le cadre d'un projet universitaire. Elle a pour but de donner des information sur un personnage du jeux Leagues of Legends
-choisi par l'utilisateur.
+Cette application a été réalisé dans le cadre d'un projet universitaire. Elle a pour but de donner selon des critères spécifiques comme le rôle, un champion à jouer et un champion ennemi, d'obtenir une liste d'items à acheter durant la partie jouée.
 
-Il va donc devoir indiquer plusieurs information tel que :
+Il va donc devoir indiquer plusieurs informations telles que :
 
-- le style de la partie,
+- son role (top, jungle, mid, adc, support),
 - le nom de son personnage,
-- son role (top, mid, jungle, adc, support),
 - son adversaire,
-- si il est adc ou support, le perso de son coéquipier,
+- si il est adc ou support, le personnage de son coéquipier,
 
-Enfin l'utilisateur, aura ensuite une page avec les runes, les items et l'ordre des compétences à prendre. Il pourra ensuite mettre en favori son role et son perso.
-Si le joueur est plus expérimenter nous pouvons faire une version où un personnage est indiqué en focntion de son équipe afin de mieux s'y adapter.
+Enfin l'utilisateur, aura ensuite une page avec les runes, les items et l'ordre des compétences à prendre. 
+Il pourra aussi avoir la possibilité de mettre en favori son role et son perso, afin d'éviter de remplir les paramètres à chaque utilisation.
+
+Il sera possible de choisir un item et d'obtenir toutes les statistiques de celui-ci et une listes d'items selon les builds les plus populaires. 
