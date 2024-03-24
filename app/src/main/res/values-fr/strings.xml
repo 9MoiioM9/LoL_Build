@@ -3,6 +3,10 @@
     <string name="app_name">LoL_Build</string>
     <string name="text_select_champ">Entrer le nom d\'un champion</string>
     <string name="edit_text_champ">Entrer le nom</string>
-    <string name="button_next">Suivant</string>
-    <string name="button_exit">Quitter</string>
+    <string name="b_next">Suivant</string>
+    <string name="b_exit">Quitter</string>
+    <string name="b_preferencies">Préférences</string>
+    <string name="b_matchup">Matchup</string>
+    <string name="b_item">Items</string>
+    <string name="b_champion">Champions</string>
 </resources>
