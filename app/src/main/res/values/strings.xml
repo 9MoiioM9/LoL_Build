@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LoL_Build</string>
+    <string name="text_select_champ">Enter Champion\'s name</string>
+    <string name="edit_text_champ">Enter name</string>
+    <string name="button_next">Next</string>
+    <string name="button_exit">Exit</string>
 </resources>

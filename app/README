@@ -1,0 +1,15 @@
+Lespagnol Killian, Tribouillois Julien
+
+Cette application a été réalisé dans le cadre d'un projet universitaire. Elle a pour but de donner selon des critères spécifiques comme le rôle, un champion à jouer et un champion ennemi, d'obtenir une liste d'items à acheter durant la partie jouée.
+
+Il va donc devoir indiquer plusieurs informations telles que :
+
+- son role (top, jungle, mid, adc, support),
+- le nom de son personnage,
+- son adversaire,
+- si il est adc ou support, le personnage de son coéquipier,
+
+Enfin l'utilisateur, aura ensuite une page avec les runes, les items et l'ordre des compétences à prendre. 
+Il pourra aussi avoir la possibilité de mettre en favori son role et son perso, afin d'éviter de remplir les paramètres à chaque utilisation.
+
+Il sera possible de choisir un item et d'obtenir toutes les statistiques de celui-ci et une listes d'items selon les builds les plus populaires. 
