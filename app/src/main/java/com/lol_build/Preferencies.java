@@ -1,8 +1,6 @@
 package com.lol_build;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.merakianalytics.orianna.Orianna;
-import com.merakianalytics.orianna.types.dto.staticdata.Champion;
 
 import android.os.Bundle;
 

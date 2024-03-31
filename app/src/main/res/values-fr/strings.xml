@@ -9,4 +9,7 @@
     <string name="b_matchup">Matchup</string>
     <string name="b_item">Items</string>
     <string name="b_champion">Champions</string>
+    <string name="choice_matchup">Matchup de la partie</string>
+    <string name="choice_player">Votre choix</string>
+    <string name="choice_enemy">Choix de votre ennemi</string>
 </resources>

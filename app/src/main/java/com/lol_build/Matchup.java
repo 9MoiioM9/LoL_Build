@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -14,7 +15,8 @@ public class Matchup extends AppCompatActivity {
 
     public static String Tag = "LolTag";
 
-    private EditText name_input;
+    private AutoCompleteTextView player_choice;
+    private AutoCompleteTextView enemy_choice;
     private Button next_button;
     private Button exit_button;
 
@@ -23,9 +25,10 @@ public class Matchup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matchup);
 
-        name_input = findViewById(R.id.editTextText);
-        next_button = findViewById(R.id.button);
-        exit_button = findViewById(R.id.button2);
+        player_choice = findViewById(R.id.choice_player);
+        enemy_choice = findViewById(R.id.choice_enemy);
+        next_button = findViewById(R.id.b_next);
+        exit_button = findViewById(R.id.b_exit);
 
         exit_button.setOnClickListener(new View.OnClickListener() {
             @Override
