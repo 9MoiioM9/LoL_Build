@@ -29,6 +29,8 @@ android {
 }
 
 dependencies {
+    //Add Riot librairies from Riot API Librairies
+    implementation(files("libs/orianna-android-4.0.0-rc9-jar-with-dependencies.jar"))
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
