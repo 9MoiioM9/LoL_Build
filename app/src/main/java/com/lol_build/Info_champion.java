@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Selection_Role extends AppCompatActivity {
-    public static String Tag = "LolTag";
+public class Info_champion extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selection_role);
+        setContentView(R.layout.activity_info_champion);
     }
 }
