@@ -7,9 +7,16 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
+
+import com.merakianalytics.orianna.Orianna;
+import com.merakianalytics.orianna.types.core.staticdata.Champion;
+import com.merakianalytics.orianna.types.core.staticdata.Champions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Matchup extends AppCompatActivity {
 
@@ -25,10 +32,22 @@ public class Matchup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matchup);
 
+
         player_choice = findViewById(R.id.choice_player);
         enemy_choice = findViewById(R.id.choice_enemy);
         next_button = findViewById(R.id.b_next);
         exit_button = findViewById(R.id.b_exit);
+
+        Champions champions = Orianna.getChampions();
+        List<String> championNames = new ArrayList<>();
+        for(Champion champion : champions){
+            championNames.add(champion.getName());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, championNames);
+
+        player_choice.setAdapter(adapter);
+        enemy_choice.setAdapter(adapter);
 
         exit_button.setOnClickListener(new View.OnClickListener() {
             @Override

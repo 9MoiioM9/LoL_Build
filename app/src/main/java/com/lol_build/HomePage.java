@@ -10,6 +10,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.merakianalytics.orianna.Orianna;
+import com.merakianalytics.orianna.types.common.Platform;
+
 public class HomePage extends AppCompatActivity {
     public static String Tag = "LolTag";
     private Button pref_button;
@@ -23,6 +26,12 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+
+        Orianna.Configuration config = new Orianna.Configuration();
+        Orianna.loadConfiguration(config);
+        config.setDefaultPlatform(Platform.EUROPE_WEST);
+
+
         pref_button = findViewById(R.id.preferencies);
         machup_button = findViewById(R.id.b_matchup);
         items_button = findViewById(R.id.b_item);
