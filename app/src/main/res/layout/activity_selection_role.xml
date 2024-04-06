@@ -7,12 +7,46 @@
     tools:context=".Selection_Role">
 
     <Button
-        android:id="@+id/b_conf"
-        android:layout_width="172dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="320dp"
-        android:layout_marginEnd="120dp"
-        android:text="@string/b_next"
+        android:id="@+id/b_confirm_role"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:text="@string/b_confirm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/i_map" />
+
+    <ImageView
+        android:id="@+id/i_map"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_select_role"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <Button
+        android:id="@+id/b_back_role"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/b_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_select_role"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/select_role_txt" />
 </androidx.constraintlayout.widget.ConstraintLayout>

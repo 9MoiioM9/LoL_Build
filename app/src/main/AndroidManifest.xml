@@ -15,6 +15,9 @@
         android:theme="@style/Theme.LoL_Build"
         tools:targetApi="31">
         <activity
+            android:name=".champion_item"
+            android:exported="false" />
+        <activity
             android:name=".Info_champion"
             android:exported="false" />
         <activity
@@ -31,7 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".Selection_Role"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".HomePage"
             android:exported="true">

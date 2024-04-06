@@ -17,4 +17,16 @@
     <string name="stat_item">Statistiques de l\'item</string>
     <string name="name_item">Nom :</string>
     <string name="desc_item">Passif :</string>
+    <string name="b_back">Retour</string>
+    <string name="b_confirm">Confirmer</string>
+    <string name="select_role_txt">Selectionnez votre Role</string>
+    <string name="info_champion_txt">Selectionnez un champion à rechercher :</string>
+    <string name="empty_stat">0</string>
+    <string name="armor">Armure :</string>
+    <string name="rm">Mr :</string>
+    <string name="atk">Ad :</string>
+    <string name="ap">Ap :</string>
+    <string name="AS">AS :</string>
+    <string name="speed">Vitesse :</string>
+    <string name="icon_champion">Icon champion</string>
 </resources>

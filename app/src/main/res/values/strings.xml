@@ -16,4 +16,16 @@
     <string name="stat_item">Item\'s statistics</string>
     <string name="name_item">Name :</string>
     <string name="desc_item">Description :</string>
+    <string name="b_back">Back</string>
+    <string name="b_confirm">Confirm</string>
+    <string name="select_role_txt">Select your Role</string>
+    <string name="info_champion_txt">Select a champion to search :</string>
+    <string name="empty_stat">0</string>
+    <string name="armor">Armor :</string>
+    <string name="rm">Rm :</string>
+    <string name="atk">Ad :</string>
+    <string name="ap">Ap :</string>
+    <string name="AS">AS :</string>
+    <string name="speed">Speed :</string>
+    <string name="icon_champion">Icon Champion</string>
 </resources>

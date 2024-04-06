@@ -14,6 +14,10 @@ public class Champion {
     private String partype;
     private Stats stats;
 
+    public String getId(){
+        return id;
+    }
+
     public String getName(){
         return name;
     }
