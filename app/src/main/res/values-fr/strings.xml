@@ -12,4 +12,9 @@
     <string name="choice_matchup">Matchup de la partie</string>
     <string name="choice_player">Votre choix</string>
     <string name="choice_enemy">Choix de votre ennemi</string>
+    <string name="search_items">Choississez un item à analyser</string>
+    <string name="choice_item">Items ...</string>
+    <string name="stat_item">Statistiques de l\'item</string>
+    <string name="name_item">Nom :</string>
+    <string name="desc_item">Passif :</string>
 </resources>

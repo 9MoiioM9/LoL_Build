@@ -11,4 +11,9 @@
     <string name="choice_matchup">Matchup of the game</string>
     <string name="choice_player">Your choice</string>
     <string name="choice_enemy">Enemy choice</string>
+    <string name="search_items">Choose an item to check</string>
+    <string name="choice_item">Items ...</string>
+    <string name="stat_item">Item\'s statistics</string>
+    <string name="name_item">Name :</string>
+    <string name="desc_item">Description :</string>
 </resources>

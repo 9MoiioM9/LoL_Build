@@ -29,14 +29,19 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
-
+/*
 configurations.all {
     exclude("com.google.guava", "listenablefuture")
 }
 
+ */
+
 dependencies {
     //Add Riot librairies from Riot API Librairies
-    implementation(files("libs/orianna-android-4.0.0-rc9-jar-with-dependencies.jar"))
+    //implementation(files("libs/orianna-android-4.0.0-rc9-jar-with-dependencies.jar"))
+
+    implementation("com.google.code.gson:gson:2.10")
+    implementation("io.coil-kt:coil:2.6.0")
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")

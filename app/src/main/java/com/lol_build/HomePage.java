@@ -10,8 +10,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.merakianalytics.orianna.Orianna;
-import com.merakianalytics.orianna.types.common.Platform;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 public class HomePage extends AppCompatActivity {
     public static String Tag = "LolTag";
@@ -27,9 +31,17 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-        Orianna.Configuration config = new Orianna.Configuration();
-        Orianna.loadConfiguration(config);
-        config.setDefaultPlatform(Platform.EUROPE_WEST);
+        //Configuration de Orianna pour utilisation
+        //Orianna.setRiotAPIKey("RGAPI-43b70175-c1d2-422a-bb32-6f74542043b5");
+
+        //Orianna.Configuration config = new Orianna.Configuration();
+        //config.setDefaultPlatform(Platform.EUROPE_WEST);
+
+
+        //Orianna.setDefaultRegion(Region.EUROPE_WEST);
+        //config.setCurrentVersionExpiration(ExpirationPeriod.create(6, TimeUnit.HOURS));
+
+        //Orianna.loadConfiguration(config);
 
 
         pref_button = findViewById(R.id.preferencies);

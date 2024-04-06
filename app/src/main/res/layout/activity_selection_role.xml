@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Selection_Role">
 
+    <Button
+        android:id="@+id/b_conf"
+        android:layout_width="172dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="120dp"
+        android:text="@string/b_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
