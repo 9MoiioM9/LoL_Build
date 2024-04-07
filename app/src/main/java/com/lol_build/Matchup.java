@@ -54,53 +54,12 @@ public class Matchup extends AppCompatActivity {
         player_img = findViewById(R.id.champion_player);
         enemy_img = findViewById(R.id.champion_enemy);
 
-        List<Champion> champions = new ArrayList<>();
 
-        new Thread(() -> {
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(Matchup.this, android.R.layout.simple_spinner_item, HomePage.nameOfAllChampions);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        player_choice.setAdapter(adapter);
+        enemy_choice.setAdapter(adapter);
 
-            List<String> champions_name = new ArrayList<>();
-            //champions_name.add(null);
-
-            String jsonData;
-            OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder()
-                    .url("https://ddragon.leagueoflegends.com/cdn/14.7.1/data/fr_FR/champion.json")
-                    .build();
-
-            try (Response response = client.newCall(request).execute()) {
-                if (response.isSuccessful()) {
-                    jsonData = response.body().string();
-                    JsonObject jsonObject = JsonParser.parseString(jsonData).getAsJsonObject();
-                    JsonObject championsObject = jsonObject.getAsJsonObject("data");
-
-                    Log.w(HomePage.Tag, " Désérialisation du json pour la classe Champion");
-
-                    Gson gson = new Gson();
-                    for (String championName : championsObject.keySet()) {
-                        Champion champion = gson.fromJson(championsObject.get(championName), Champion.class);
-                        champions.add(champion);
-                        champions_name.add(champion.getName());
-                    }
-
-                    Log.w(HomePage.Tag, " Classe Champion opérationnelle !");
-
-                } else {
-                    throw new IOException("Failed to fetch champions: " + response.code());
-                }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            runOnUiThread(()->{
-
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(Matchup.this, android.R.layout.simple_spinner_item, champions_name);
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                player_choice.setAdapter(adapter);
-                enemy_choice.setAdapter(adapter);
-
-            });
-            Log.w(HomePage.Tag, " Start THREAD ");
-        }).start();
 
         player_choice.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -110,13 +69,13 @@ public class Matchup extends AppCompatActivity {
 
                     String jsonData;
                     OkHttpClient client = new OkHttpClient();
-                    String selected_champion = champions
-                            .get(player_choice.getSelectedItemPosition()) //+ 1)
+                    String selected_champion = HomePage.champions
+                            .get(position) //+ 1)
                             .getId();
 
                     if(selected_champion != null) {
 
-                        String img_url = "https://ddragon.leagueoflegends.com/cdn/14.7.1/img/champion/" + selected_champion + ".png";
+                        String img_url = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/champion/"+selected_champion+".png";
 
                         runOnUiThread(() -> {
                             ImageLoader imageLoader = new ImageLoader.Builder(getApplicationContext()).build();
@@ -144,7 +103,7 @@ public class Matchup extends AppCompatActivity {
 
                     String jsonData;
                     OkHttpClient client = new OkHttpClient();
-                    String selected_champion = champions
+                    String selected_champion = HomePage.champions
                             .get(enemy_choice.getSelectedItemPosition()) //+ 1)
                             .getId();
 
@@ -181,12 +140,12 @@ public class Matchup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO recuperer le nom via le site
-                go_machup(v);
+                go_result_build(v);
             }
         });
     }
 
-    public void go_machup(View v){
+    public void go_result_build(View v){
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         Intent intent = new Intent(this, Result_Build.class);
         startActivity(intent);

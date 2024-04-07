@@ -2,13 +2,93 @@ package com.lol_build;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.lol_build.api.Champion;
+
+import coil.ImageLoader;
+import coil.request.ImageRequest;
+import okhttp3.OkHttpClient;
 
 public class champion_item extends AppCompatActivity {
+    private ImageView icon_champion;
+    private TextView name;
+    private TextView title;
+    private TextView hp;
+    private TextView mana;
+    private TextView ad;
+    private TextView ap;
+    private TextView armor;
+    private TextView resistance_magique;
+    private TextView as;
+    private TextView speed;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_champion_item);
+
+        icon_champion = findViewById(R.id.icon_champion);
+        name = findViewById(R.id.champion_name);
+        title = findViewById(R.id.champion_title);
+        hp = findViewById(R.id.hp_champion);
+        mana = findViewById(R.id.mana_champion);
+        ad = findViewById(R.id.atk);
+        ap = findViewById(R.id.ap);
+        armor = findViewById(R.id.armor);
+        resistance_magique = findViewById(R.id.rm);
+        as = findViewById(R.id.atkSpeed);
+        speed = findViewById(R.id.speed);
+
+
+        Intent intent = getIntent();
+        Champion champion_spinner = (Champion) intent.getSerializableExtra("champion");
+
+        Log.w(HomePage.Tag, champion_spinner.toString());
+
+        if(champion_spinner != null){
+            loadChampion(champion_spinner);
+        }
+
+    }
+
+    public void loadChampion(Champion champion){
+        new Thread(() -> {
+            String jsonData;
+            OkHttpClient client = new OkHttpClient();
+
+            String url = "https://ddragon.leagueoflegends.com/cdn/14.7.1/img/champion/"+champion.getId()+".png";
+
+            runOnUiThread(() -> {
+                ImageLoader imageLoader = new ImageLoader.Builder(getApplicationContext()).build();
+                imageLoader.enqueue(new ImageRequest.Builder(getApplicationContext())
+                        .data(url)
+                        .target(icon_champion)
+                        .build());
+
+                name.setText(champion.getName());
+                title.setText(champion.getTitle());
+                hp.setText(String.valueOf(champion.getStats().getHp()));
+                mana.setText(String.valueOf(champion.getStats().getMp()));
+                ad.setText(String.valueOf(champion.getStats().getAttackdamage()));
+                armor.setText(String.valueOf(champion.getStats().getArmor()));
+                resistance_magique.setText(String.valueOf(champion.getStats().getSpellblock()));
+                as.setText(String.valueOf(champion.getStats().getAttackspeed()));
+                speed.setText(String.valueOf(champion.getStats().getMovespeed()));
+
+                if(champion.getStats().getMp() == 0){
+                    mana.setBackgroundColor(Color.GRAY);
+                }
+
+            });
+
+
+        }).start();
     }
 }

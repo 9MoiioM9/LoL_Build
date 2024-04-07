@@ -1,7 +1,8 @@
 package com.lol_build.api;
+import java.io.Serializable;
 import java.util.List;
 
-public class Champion {
+public class Champion implements Serializable {
     private String version;
     private String id;
     private String key;
@@ -21,9 +22,15 @@ public class Champion {
     public String getName(){
         return name;
     }
+    public Stats getStats() {
+        return stats;
+    }
+    public String getTitle() {
+        return title;
+    }
 
 
-    public static class Info {
+    public static class Info implements Serializable{
         private int attack;
         private int defense;
         private int magic;
@@ -31,7 +38,7 @@ public class Champion {
 
     }
 
-    public static class Image {
+    public static class Image implements Serializable{
         private String full;
         private String sprite;
         private String group;
@@ -42,7 +49,7 @@ public class Champion {
 
     }
 
-    public static class Stats {
+    public static class Stats implements Serializable{
         private int hp;
         private int hpperlevel;
         private int mp;
@@ -64,6 +71,33 @@ public class Champion {
         private double attackspeedperlevel;
         private double attackspeed;
 
+        public int getHp() {
+            return hp;
+        }
+
+        public int getMp() {
+            return mp;
+        }
+
+        public int getMovespeed() {
+            return movespeed;
+        }
+
+        public int getArmor() {
+            return armor;
+        }
+
+        public int getSpellblock() {
+            return spellblock;
+        }
+
+        public double getAttackspeed() {
+            return attackspeed;
+        }
+
+        public int getAttackdamage() {
+            return attackdamage;
+        }
     }
 }
 

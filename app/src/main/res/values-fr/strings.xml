@@ -29,4 +29,6 @@
     <string name="AS">AS :</string>
     <string name="speed">Vitesse :</string>
     <string name="icon_champion">Icon champion</string>
+    <string name="title_champion">"Titre : "</string>
+    <string name="search_champion_txt">Nom du Champion...</string>
 </resources>

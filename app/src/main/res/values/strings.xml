@@ -28,4 +28,6 @@
     <string name="AS">AS :</string>
     <string name="speed">Speed :</string>
     <string name="icon_champion">Icon Champion</string>
+    <string name="title_champion">Title :</string>
+    <string name="search_champion_txt">Champion\'s name...</string>
 </resources>
