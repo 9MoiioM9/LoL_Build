@@ -1,11 +1,13 @@
 package com.lol_build;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -30,6 +32,8 @@ public class Info_item extends AppCompatActivity {
     public TextView tagsItem;
     public TextView itemGold;
     public TextView itemSell;
+    public SwitchCompat switch_items;
+    private boolean switch_isActived = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +49,18 @@ public class Info_item extends AppCompatActivity {
         tagsItem = findViewById(R.id.tags);
         itemGold = findViewById(R.id.gold);
         itemSell = findViewById(R.id.sell);
+        switch_items = findViewById(R.id.switch_info_item);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(Info_item.this, android.R.layout.simple_spinner_item, HomePage.nameOfAllItemsPurchasable);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_items.setAdapter(adapter);
+        changeListItem();
 
         spinner_items.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Item item_selected = HomePage.items.get(position);
 
-                loadItem(item_selected);
+                if(switch_isActived){
+                    loadItem(HomePage.items.get(position));
+                }else loadItem(getItemFromName(spinner_items.getSelectedItem().toString()));
+
             }
 
             @Override
@@ -64,6 +69,25 @@ public class Info_item extends AppCompatActivity {
             }
         });
 
+        switch_items.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                switch_isActived = isChecked;
+                changeListItem();
+            }
+        });
+
+    }
+
+    private void changeListItem(){
+        ArrayAdapter<String> adapter;
+        if(switch_isActived){
+            adapter = new ArrayAdapter<>(Info_item.this, android.R.layout.simple_spinner_item, HomePage.nameOfAllItems);
+        }else {
+            adapter = new ArrayAdapter<>(Info_item.this, android.R.layout.simple_spinner_item, HomePage.nameOfAllItemsPurchasable);
+        }
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_items.setAdapter(adapter);
     }
 
     public void loadItem(Item item){
@@ -93,7 +117,7 @@ public class Info_item extends AppCompatActivity {
         }).start();
     }
 
-    public String getString(List<String> list){
+    private String getString(List<String> list){
         StringBuilder res = new StringBuilder();
         if(list != null){
             for(int i=0; i<list.size(); ++i){
@@ -105,6 +129,17 @@ public class Info_item extends AppCompatActivity {
             return res.toString();
         }else return "None";
 
+    }
+
+    private Item getItemFromName(String name){
+        Item res = null;
+        for(Item item : HomePage.items){
+            if(item.getName() == name){
+                return item;
+            }
+            res = item;
+        }
+        return res;
     }
 
 }

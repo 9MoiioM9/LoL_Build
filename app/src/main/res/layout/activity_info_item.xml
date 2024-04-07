@@ -184,10 +184,10 @@
         app:layout_constraintStart_toEndOf="@+id/t_sell"
         app:layout_constraintTop_toTopOf="@+id/t_sell" />
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch_info_item"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="@string/switch_item"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/info_item_spinner"
