@@ -7,7 +7,6 @@ public class Item {
     private String id;
     private String name;
     private String description;
-    private List<String> colloq;
     private String plaintext;
     private List<String> into;
     private Image image;
@@ -69,6 +68,10 @@ public class Item {
         }
         public int getSell(){
             return sell;
+        }
+
+        public boolean isPurchasable() {
+            return purchasable;
         }
     }
 }

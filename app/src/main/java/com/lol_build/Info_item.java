@@ -3,56 +3,108 @@ package com.lol_build;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Button;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.lol_build.api.Item;
+
+import java.util.List;
+
+import coil.ImageLoader;
+import coil.request.ImageRequest;
+import okhttp3.OkHttpClient;
 
 public class Info_item extends AppCompatActivity {
 
     public EditText search_item;
-
+    public Spinner spinner_items;
+    public ImageView icon_Item;
     public TextView nameItem;
     public TextView descItem;
-    public Button launch_search;
+    public TextView items_into;
+    public TextView tagsItem;
+    public TextView itemGold;
+    public TextView itemSell;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_item);
 
-        search_item = findViewById(R.id.search_item);
-        nameItem = findViewById(R.id.name_item);
-        descItem = findViewById(R.id.desc_item);
-        launch_search = findViewById(R.id.search);
+        search_item = findViewById(R.id.info_item_editText);
+        spinner_items = findViewById(R.id.info_item_spinner);
+        icon_Item = findViewById(R.id.icon_item);
+        nameItem = findViewById(R.id.item_name);
+        descItem = findViewById(R.id.desc);
+        items_into = findViewById(R.id.intos_item);
+        tagsItem = findViewById(R.id.tags);
+        itemGold = findViewById(R.id.gold);
+        itemSell = findViewById(R.id.sell);
 
-        //Item item = getItem(search_item.getText().toString());
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(Info_item.this, android.R.layout.simple_spinner_item, HomePage.nameOfAllItemsPurchasable);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_items.setAdapter(adapter);
 
-/*
-        launch_search.setOnClickListener((v) -> {
-            new Thread(() -> {
+        spinner_items.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Item item_selected = HomePage.items.get(position);
 
-                Item item = getItem(search_item.getText().toString());
-                String n = item.getName();
-                String desc = item.getDescription();
-                Log.w(HomePage.Tag, n);
-                Log.w(HomePage.Tag, "" + desc);
+                loadItem(item_selected);
+            }
 
-                runOnUiThread(()->{
-                    nameItem.setText(n);
-                    descItem.setText(desc);
-                });
-            }).start();
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
         });
 
-
     }
 
-    public Item getItem(String name){
-        return Orianna.itemNamed(name).get();
+    public void loadItem(Item item){
+        new Thread(() -> {
+            String jsonData;
+            OkHttpClient client = new OkHttpClient();
+
+            String url = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/item/"+item.getFullFromImage();
+
+            runOnUiThread(() -> {
+                ImageLoader imageLoader = new ImageLoader.Builder(getApplicationContext()).build();
+                imageLoader.enqueue(new ImageRequest.Builder(getApplicationContext())
+                        .data(url)
+                        .target(icon_Item)
+                        .build());
+
+                nameItem.setText(item.getName());
+                if(item.getPlaintext() != null)
+                    descItem.setText(item.getPlaintext());
+
+                items_into.setText(getString(item.getInto()));
+                tagsItem.setText(getString(item.getTags()));
+                itemGold.setText(String.valueOf(item.getTotalFromGold()));
+                itemSell.setText(String.valueOf(item.getSellFromGold()));
+
+            });
+        }).start();
     }
 
-    
-*/}
+    public String getString(List<String> list){
+        StringBuilder res = new StringBuilder();
+        if(list != null){
+            for(int i=0; i<list.size(); ++i){
+                if(i != 0){
+                    res.append(", ");
+                }
+                res.append(list.get(i));
+            }
+            return res.toString();
+        }else return "None";
+
+    }
 
 }

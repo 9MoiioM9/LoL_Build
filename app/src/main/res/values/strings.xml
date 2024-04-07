@@ -30,4 +30,12 @@
     <string name="icon_champion">Icon Champion</string>
     <string name="title_champion">Title :</string>
     <string name="search_champion_txt">Champion\'s name...</string>
+    <string name="info_item_txt">Select an Item to search :</string>
+    <string name="search_item_txt">Item\'s name ...</string>
+    <string name="item_into">Into these Items :</string>
+    <string name="item_tags">Tags :</string>
+    <string name="item_cost">Gold Cost :</string>
+    <string name="item_sell">Gold Sell :</string>
+    <string name="txt_none">None</string>
+    <string name="switch_item">"All "</string>
 </resources>

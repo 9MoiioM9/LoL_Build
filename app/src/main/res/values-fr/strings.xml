@@ -16,7 +16,7 @@
     <string name="choice_item">Items ...</string>
     <string name="stat_item">Statistiques de l\'item</string>
     <string name="name_item">Nom :</string>
-    <string name="desc_item">Passif :</string>
+    <string name="desc_item">Description :</string>
     <string name="b_back">Retour</string>
     <string name="b_confirm">Confirmer</string>
     <string name="select_role_txt">Selectionnez votre Role</string>
@@ -31,4 +31,12 @@
     <string name="icon_champion">Icon champion</string>
     <string name="title_champion">"Titre : "</string>
     <string name="search_champion_txt">Nom du Champion...</string>
+    <string name="info_item_txt">Selectionnez un Item à rechercher :</string>
+    <string name="search_item_txt">Nom de l\'Item ...</string>
+    <string name="item_into">Présent dans ces Items :</string>
+    <string name="item_tags">Tags :</string>
+    <string name="item_cost">Gold d\'achat :</string>
+    <string name="item_sell">Gold de vente :</string>
+    <string name="txt_none">Aucun</string>
+    <string name="switch_item">"Tous "</string>
 </resources>

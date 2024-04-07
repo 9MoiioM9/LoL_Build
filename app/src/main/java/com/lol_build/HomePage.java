@@ -30,8 +30,11 @@ public class HomePage extends AppCompatActivity {
     public static String Tag = "LolTag";
     public static List<Champion> champions = new ArrayList<>();
     public static List<Item> items = new ArrayList<>();
+    public static List<Item> itemsPurchasable = new ArrayList<>();
     public static List<String> nameOfAllChampions = new ArrayList<>();
     public static List<String> nameOfAllItems = new ArrayList<>();
+    public static List<String> nameOfAllItemsPurchasable = new ArrayList<>();
+
     public static String VERSION;
     private Button pref_button;
     private Button machup_button;
@@ -129,6 +132,10 @@ public class HomePage extends AppCompatActivity {
                         items.add(item);
 
                         nameOfAllItems.add(item.getName());
+                        if(item.getGold().isPurchasable()){
+                            itemsPurchasable.add(item);
+                            nameOfAllItemsPurchasable.add(item.getName());
+                        }
                     }
 
                     Log.w(Tag, "Class Item works !");
