@@ -9,7 +9,10 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import coil.ImageLoader;
 import coil.request.ImageRequest;
@@ -19,6 +22,14 @@ public class Selection_Role extends AppCompatActivity {
 
     private Button back_button;
     private ImageView map_img;
+    private RadioGroup rb_grp_role;
+    private RadioGroup rb_grp_bot;
+    private RadioButton rb_top;
+    private RadioButton rb_jungle;
+    private RadioButton rb_mid;
+    private RadioButton rb_bottom;
+    private RadioButton rb_adc;
+    private RadioButton rb_support;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +39,15 @@ public class Selection_Role extends AppCompatActivity {
         confirm_button = findViewById(R.id.b_confirm_role);
         back_button = findViewById(R.id.b_back_role);
         map_img = findViewById(R.id.i_map);
+
+        rb_grp_role = findViewById(R.id.radioGrp_Role);
+        rb_grp_bot = findViewById(R.id.radioGrp_Bot);
+        rb_top = findViewById(R.id.rb_top);
+        rb_jungle = findViewById(R.id.rb_jg);
+        rb_mid = findViewById(R.id.rb_mid);
+        rb_bottom = findViewById(R.id.rb_bot);
+        rb_adc = findViewById(R.id.rb_adc);
+        rb_support = findViewById(R.id.rb_supp);
 
         new Thread(() -> {
             String img_url = "https://ddragon.leagueoflegends.com/cdn/6.8.1/img/map/map11.png";
@@ -40,6 +60,15 @@ public class Selection_Role extends AppCompatActivity {
                         .build());
             });
         }).start();
+
+        rb_bottom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    rb_grp_bot.setVisibility(View.VISIBLE);
+                }else rb_grp_bot.setVisibility(View.INVISIBLE);
+            }
+        });
 
         confirm_button.setOnClickListener(new View.OnClickListener() {
             @Override

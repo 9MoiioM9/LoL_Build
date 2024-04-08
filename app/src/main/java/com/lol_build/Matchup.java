@@ -89,6 +89,7 @@ public class Matchup extends AppCompatActivity {
                 }).start();
             }
 
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 //DO nothing
@@ -104,7 +105,7 @@ public class Matchup extends AppCompatActivity {
                     String jsonData;
                     OkHttpClient client = new OkHttpClient();
                     String selected_champion = HomePage.champions
-                            .get(enemy_choice.getSelectedItemPosition()) //+ 1)
+                            .get(position) //+ 1)
                             .getId();
 
                     if(selected_champion != null) {
@@ -129,6 +130,24 @@ public class Matchup extends AppCompatActivity {
             }
         });
 
+        player_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchItemChampion(HomePage
+                        .champions
+                        .get(player_choice.getSelectedItemPosition()));
+            }
+        });
+
+        enemy_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchItemChampion(HomePage
+                        .champions
+                        .get(enemy_choice.getSelectedItemPosition()));
+            }
+        });
+
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -143,6 +162,12 @@ public class Matchup extends AppCompatActivity {
                 go_result_build(v);
             }
         });
+    }
+
+    public void launchItemChampion(Champion selected_champion){
+        Intent intent = new Intent(Matchup.this, champion_item.class);
+        intent.putExtra("champion", selected_champion);
+        startActivity(intent);
     }
 
     public void go_result_build(View v){
