@@ -45,4 +45,7 @@
     <string name="role_Bot">Bot</string>
     <string name="role_adc">Adc</string>
     <string name="role_support">Supp</string>
+    <string name="text_pseudo">Enter a pseudo</string>
+    <string name="in_pseudo" translatable="false">pseudo</string>
+    <string name="search_pseudo">Search</string>
 </resources>

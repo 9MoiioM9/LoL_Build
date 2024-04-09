@@ -26,6 +26,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+
 public class HomePage extends AppCompatActivity {
     public static String Tag = "LolTag";
     public static List<Champion> champions = new ArrayList<>();
