@@ -12,22 +12,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class other_match_adapter extends RecyclerView.Adapter<other_match_adapter.MyViewHolder> {
+public class Other_match_adapter extends RecyclerView.Adapter<Other_match_adapter.MyViewHolder> {
     List<Other_match_item> other_matchs;
 
-    other_match_adapter(List<Other_match_item> other_matchs){
+    Other_match_adapter(List<Other_match_item> other_matchs){
         this.other_matchs = other_matchs;
     }
     @NonNull
     @Override
-    public other_match_adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Other_match_adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.activity_other_match_item, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull other_match_adapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Other_match_adapter.MyViewHolder holder, int position) {
         holder.display(other_matchs.get(position));
     }
 

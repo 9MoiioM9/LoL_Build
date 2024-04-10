@@ -48,4 +48,5 @@
     <string name="text_pseudo">Enter a pseudo</string>
     <string name="in_pseudo" translatable="false">pseudo</string>
     <string name="search_pseudo">Search</string>
+    <string name="b_search_profil">Search a player</string>
 </resources>
