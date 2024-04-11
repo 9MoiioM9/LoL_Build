@@ -52,4 +52,7 @@
     <string name="txt_itemsbuild">Build recommandé pour la game :</string>
     <string name="txt_runes">"Runes : "</string>
     <string name="txt_WinRate">WinRate :</string>
+    <string name="text_pseudo">entrer un pseudo</string>
+    <string name="search_pseudo">Recherche</string>
+    <string name="b_search_profil">Rechercher un joueur</string>
 </resources>

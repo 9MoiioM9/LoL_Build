@@ -33,6 +33,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+
 public class HomePage extends AppCompatActivity {
     public static String Tag = "LolTag";
     public static List<Champion> champions = new ArrayList<>();
@@ -48,9 +49,12 @@ public class HomePage extends AppCompatActivity {
     private Button items_button;
     private Button champ_button;
     private Button quit_button;
+
     private ImageView img_homepage;
 
     public static AppDatabase database;
+
+    private Button search_profil_button;
 
 
     @Override
@@ -67,7 +71,10 @@ public class HomePage extends AppCompatActivity {
         items_button = findViewById(R.id.b_item);
         champ_button = findViewById(R.id.b_champion);
         quit_button = findViewById(R.id.b_quit);
+
         img_homepage = findViewById(R.id.img_home);
+        search_profil_button = findViewById(R.id.b_profil_search);
+
 
         new Thread(() -> {
             //Request for version
@@ -212,6 +219,13 @@ public class HomePage extends AppCompatActivity {
                 go_champ(v);
             }
         });
+
+        search_profil_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                go_search_player(v);
+            }
+        });
     }
 
     public void go_preferencie(View view){
@@ -237,6 +251,12 @@ public class HomePage extends AppCompatActivity {
     public void go_champ(View view){
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         Intent intent = new Intent(this, Info_champion.class);
+        startActivity(intent);
+    }
+
+    public void go_search_player(View view){
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        Intent intent = new Intent(this, Search_profil.class);
         startActivity(intent);
     }
 }

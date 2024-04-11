@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".champion_item">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="252dp"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/icon_champion"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/icon_champion"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/champion_title"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
+
+            <TextView
+                android:id="@+id/t_atk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/atk"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/mana_champion"
+                app:layout_constraintTop_toBottomOf="@+id/mana_champion" />
+
+            <TextView
+                android:id="@+id/atk"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/empty_stat"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/t_atk"
+                app:layout_constraintTop_toTopOf="@+id/t_atk" />
+
+            <TextView
+                android:id="@+id/t_ap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ap"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/ap"
+                app:layout_constraintTop_toTopOf="@+id/ap" />
+
+            <TextView
+                android:id="@+id/ap"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/empty_stat"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/mana_champion"
+                app:layout_constraintTop_toBottomOf="@+id/mana_champion" />
+
+            <TextView
+                android:id="@+id/t_armor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:text="@string/armor"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/t_atk"
+                app:layout_constraintTop_toBottomOf="@+id/t_atk" />
+
+            <TextView
+                android:id="@+id/armor"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/empty_stat"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/t_armor"
+                app:layout_constraintTop_toTopOf="@+id/t_armor" />
+
+            <TextView
+                android:id="@+id/t_rm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rm"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/rm"
+                app:layout_constraintTop_toTopOf="@+id/rm" />
+
+            <TextView
+                android:id="@+id/rm"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/empty_stat"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/ap"
+                app:layout_constraintTop_toTopOf="@+id/armor" />
+
+            <TextView
+                android:id="@+id/t_atkSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:text="@string/AS"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/t_armor"
+                app:layout_constraintTop_toBottomOf="@+id/t_armor" />
+
+            <TextView
+                android:id="@+id/atkSpeed"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/empty_stat"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/t_atkSpeed"
+                app:layout_constraintTop_toTopOf="@+id/t_atkSpeed" />
+
+            <TextView
+                android:id="@+id/t_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/speed"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/speed"
+                app:layout_constraintTop_toTopOf="@+id/speed" />
+
+            <TextView
+                android:id="@+id/speed"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/empty_stat"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/rm"
+                app:layout_constraintTop_toTopOf="@+id/atkSpeed" />
+
+            <TextView
+                android:id="@+id/hp_champion"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#4CAF50"
+                android:text="@string/empty_stat"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/icon_champion"
+                app:layout_constraintTop_toTopOf="@+id/icon_champion" />
+
+            <TextView
+                android:id="@+id/mana_champion"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#03A9F4"
+                android:text="@string/empty_stat"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/hp_champion"
+                app:layout_constraintTop_toBottomOf="@+id/hp_champion" />
+
+            <TextView
+                android:id="@+id/champion_name"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/name_item"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/icon_champion"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/champion_title"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/name_item"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/champion_name"
+                app:layout_constraintTop_toBottomOf="@+id/champion_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

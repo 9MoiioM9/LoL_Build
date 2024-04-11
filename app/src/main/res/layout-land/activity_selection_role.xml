@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Selection_Role">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/i_map"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
+
+            <TextView
+                android:id="@+id/txt_select_role"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:typeface="serif"
+                tools:text="@string/select_role_txt" />
+
+            <RadioGroup
+                android:id="@+id/radioGrp_Role"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/role_top"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_jg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/role_jg"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_mid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/role_mid"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_bot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/role_Bot"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGrp_Bot"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <RadioButton
+                    android:id="@+id/rb_adc"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/role_adc"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_supp"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/role_support"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/b_confirm_role"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="@string/b_confirm" />
+
+            <Button
+                android:id="@+id/b_back_role"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="@string/b_back" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
