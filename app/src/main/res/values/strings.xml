@@ -45,4 +45,10 @@
     <string name="role_Bot">Bot</string>
     <string name="role_adc">Adc</string>
     <string name="role_support">Supp</string>
+    <string name="result_build_txt">Result of the matchup</string>
+    <string name="txt_skills_order">Skills Order :</string>
+    <string name="txt_summs">Summoner spells :</string>
+    <string name="txt_itemsbuild">Build recommended for the game :</string>
+    <string name="txt_runes">Runes :</string>
+    <string name="txt_WinRate">WinRate :</string>
 </resources>

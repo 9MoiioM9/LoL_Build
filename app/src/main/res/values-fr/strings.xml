@@ -46,4 +46,10 @@
     <string name="role_Bot">Bot</string>
     <string name="role_adc">Adc</string>
     <string name="role_support">Supp</string>
+    <string name="result_build_txt">Résultat du matchup</string>
+    <string name="txt_skills_order">Ordre des compétences :</string>
+    <string name="txt_summs">"Sorts d'invocateur : "</string>
+    <string name="txt_itemsbuild">Build recommandé pour la game :</string>
+    <string name="txt_runes">"Runes : "</string>
+    <string name="txt_WinRate">WinRate :</string>
 </resources>

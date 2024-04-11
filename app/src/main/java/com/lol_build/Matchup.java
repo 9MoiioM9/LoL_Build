@@ -61,6 +61,7 @@ public class Matchup extends AppCompatActivity {
         enemy_choice.setAdapter(adapter);
 
 
+
         player_choice.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
@@ -158,7 +159,6 @@ public class Matchup extends AppCompatActivity {
         confirm_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO recuperer le nom via le site
                 go_result_build(v);
             }
         });
@@ -171,8 +171,16 @@ public class Matchup extends AppCompatActivity {
     }
 
     public void go_result_build(View v){
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        Intent intent = new Intent(this, Result_Build.class);
+        Intent intent = new Intent(Matchup.this, Result_Build.class);
+        intent.putExtra("player_champion",
+                HomePage.champions
+                        .get(player_choice.getSelectedItemPosition()));
+
+        intent.putExtra("enemy_champion",
+                HomePage.champions
+                        .get(enemy_choice.getSelectedItemPosition()));
+
+
         startActivity(intent);
     }
 

@@ -50,9 +50,10 @@ public class champion_item extends AppCompatActivity {
         Intent intent = getIntent();
         Champion champion_spinner = (Champion) intent.getSerializableExtra("champion");
 
-        Log.w(HomePage.Tag, champion_spinner.toString());
+
 
         if(champion_spinner != null){
+            Log.w(HomePage.Tag, champion_spinner.toString());
             loadChampion(champion_spinner);
         }
 
@@ -60,8 +61,6 @@ public class champion_item extends AppCompatActivity {
 
     public void loadChampion(Champion champion){
         new Thread(() -> {
-            String jsonData;
-            OkHttpClient client = new OkHttpClient();
 
             String url = "https://ddragon.leagueoflegends.com/cdn/14.7.1/img/champion/"+champion.getId()+".png";
 
@@ -82,8 +81,22 @@ public class champion_item extends AppCompatActivity {
                 as.setText(String.valueOf(champion.getStats().getAttackspeed()));
                 speed.setText(String.valueOf(champion.getStats().getMovespeed()));
 
-                if(champion.getStats().getMp() == 0){
-                    mana.setBackgroundColor(Color.GRAY);
+                switch (champion.getPartype()){
+                    case "Mana":
+                        mana.setBackgroundColor(Color.parseColor("#03A9F4"));
+                        break;
+                    case "Énergie":
+                        mana.setBackgroundColor(Color.parseColor("#FFC107"));
+                        break;
+                    case "Fureur":
+                        mana.setBackgroundColor(Color.parseColor("#F44336"));
+                        break;
+                    case "Rage":
+                        mana.setBackgroundColor(Color.parseColor("#F38004"));
+                        break;
+                    default :
+                        mana.setBackgroundColor(Color.GRAY);
+                        break;
                 }
 
             });

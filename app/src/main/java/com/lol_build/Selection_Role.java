@@ -13,11 +13,13 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import coil.ImageLoader;
 import coil.request.ImageRequest;
 
 public class Selection_Role extends AppCompatActivity {
+    public static String ROLE = "";
     private Button confirm_button;
 
     private Button back_button;
@@ -70,11 +72,58 @@ public class Selection_Role extends AppCompatActivity {
             }
         });
 
+        rb_top.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    ROLE = "top";
+                }
+            }
+        });
+
+        rb_jungle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    ROLE = "jungle";
+                }
+            }
+        });
+
+        rb_mid.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    ROLE = "middle";
+                }
+            }
+        });
+
+        rb_adc.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    ROLE = "bot";
+                }
+            }
+        });
+
+        rb_support.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    ROLE = "supporter";
+                }
+            }
+        });
+
         confirm_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.w(HomePage.Tag, " SUIVANT -> Matchup ");
-                go_Matchup(v);
+                if(ROLE.length() > 0){
+                    Log.w(HomePage.Tag, " SUIVANT -> Matchup ");
+                    go_Matchup(v);
+                }else Toast.makeText(getApplicationContext(), "Warning : no position have been picked !", Toast.LENGTH_SHORT).show();
             }
         });
 

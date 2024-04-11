@@ -1,15 +1,18 @@
 package com.lol_build;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -17,11 +20,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.lol_build.api.Champion;
 import com.lol_build.api.Item;
+import com.lol_build.database.AppDatabase;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import coil.ImageLoader;
+import coil.request.ImageRequest;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -41,6 +48,9 @@ public class HomePage extends AppCompatActivity {
     private Button items_button;
     private Button champ_button;
     private Button quit_button;
+    private ImageView img_homepage;
+
+    public static AppDatabase database;
 
 
     @Override
@@ -48,11 +58,16 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
+        database = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, AppDatabase.DATABASE_NAME).build();
+
+
         pref_button = findViewById(R.id.preferencies);
         machup_button = findViewById(R.id.b_matchup);
         items_button = findViewById(R.id.b_item);
         champ_button = findViewById(R.id.b_champion);
         quit_button = findViewById(R.id.b_quit);
+        img_homepage = findViewById(R.id.img_home);
 
         new Thread(() -> {
             //Request for version
@@ -126,6 +141,7 @@ public class HomePage extends AppCompatActivity {
 
                     Log.w(Tag, "Deserialisation for Class Item");
 
+
                     Gson gson = new Gson();
                     for (String itemData : itemsObject.keySet()) {
                         Item item = gson.fromJson(itemsObject.get(itemData), Item.class);
@@ -146,6 +162,18 @@ public class HomePage extends AppCompatActivity {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
+            String url = "https://ddragon.leagueoflegends.com/cdn/"+VERSION+"/img/spell/AhriR.png";
+
+            runOnUiThread(() -> {
+                ImageLoader imageLoader = new ImageLoader.Builder(getApplicationContext()).build();
+                imageLoader.enqueue(new ImageRequest.Builder(getApplicationContext())
+                        .data(url)
+                        .target(img_homepage)
+                        .build());
+
+
+            });
 
         }).start();
 

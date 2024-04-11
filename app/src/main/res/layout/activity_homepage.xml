@@ -20,9 +20,7 @@
         android:id="@+id/b_item"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:layout_marginStart="106dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="106dp"
         android:text="@string/b_item"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,9 +30,7 @@
         android:id="@+id/b_champion"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:layout_marginStart="106dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="106dp"
         android:text="@string/b_champion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,13 +40,11 @@
         android:id="@+id/b_matchup"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:layout_marginStart="106dp"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="106dp"
         android:text="@string/b_matchup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/img_home" />
 
     <Button
         android:id="@+id/b_quit"
@@ -63,12 +57,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/img_home"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:layout_marginTop="74dp"
-        android:layout_marginEnd="140dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/preferencies"
         tools:src="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

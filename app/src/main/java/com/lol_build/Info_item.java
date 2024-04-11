@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.lol_build.api.Item;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import coil.ImageLoader;

@@ -28,6 +28,12 @@ public class Champion implements Serializable {
     public String getTitle() {
         return title;
     }
+    public String getPartype(){
+        return partype;
+    }
+    public String getFullFromImage(){
+        return image.getFull();
+    }
 
 
     public static class Info implements Serializable{
@@ -46,6 +52,10 @@ public class Champion implements Serializable {
         private int y;
         private int w;
         private int h;
+
+        public String getFull(){
+            return full;
+        }
 
     }
 
