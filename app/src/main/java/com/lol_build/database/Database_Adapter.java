@@ -1,4 +1,4 @@
-package com.lol_build;
+package com.lol_build.database;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lol_build.database.MatchupData;
+import com.lol_build.HomePage;
+import com.lol_build.R;
 
 import java.util.List;
 
@@ -39,7 +40,7 @@ public class Database_Adapter extends RecyclerView.Adapter<Database_Adapter.MyVi
         holder.role.setText(matchupData.get(position).getRole());
 
         //Management of all images
-        String item_URL = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/item/";
+        String item_URL = "https://ddragon.leagueoflegends.com/cdn/"+ HomePage.VERSION+"/img/item/";
         String champion_URL = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/champion/";
 
         holder.loadImg(champion_URL+matchupData.get(position).getChampionPlayer_name()+".png", holder.img_champP, holder.itemView.getContext());

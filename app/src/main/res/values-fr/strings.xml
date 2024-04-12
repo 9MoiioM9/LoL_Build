@@ -62,4 +62,5 @@
     <string name="btn_load_db">Charger la sauvegarde</string>
     <string name="txt_Preferencies">Bienvenue dans les préférences</string>
     <string name="btn_Search">Rechercher</string>
+    <string name="stillProgess">Prochainement ...</string>
 </resources>

@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Search_profil">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMatch"
-        android:layout_width="407dp"
-        android:layout_height="610dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
-
     <TextView
         android:id="@+id/text_liste_match"
         android:layout_width="62dp"
@@ -49,4 +40,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textInputLayout"
         app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
+
+    <TextView
+        android:id="@+id/still_Progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stillProgess"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
