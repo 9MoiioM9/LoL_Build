@@ -6,70 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".Selection_Role">
 
-    <TextView
-        android:id="@+id/txt_select_role"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:typeface="serif"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/i_map"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/select_role_txt" />
-
-    <ImageView
-        android:id="@+id/i_map"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txt_select_role"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <RadioGroup
-        android:id="@+id/radioGrp_Role"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/i_map"
-        app:layout_constraintTop_toBottomOf="@+id/txt_select_role">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/rb_top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/role_top"
-            android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/i_map"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
 
-        <RadioButton
-            android:id="@+id/rb_jg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/role_jg"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/txt_select_role"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toEndOf="@+id/i_map"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/select_role_txt" />
 
-        <RadioButton
-            android:id="@+id/rb_mid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/role_mid"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/rb_bot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/role_Bot"
-            android:textSize="20sp" />
+            <RadioGroup
+                android:id="@+id/radioGrp_Role"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/txt_select_role"
+                app:layout_constraintStart_toEndOf="@+id/i_map"
+                app:layout_constraintTop_toBottomOf="@+id/txt_select_role">
 
     </RadioGroup>
 
@@ -98,24 +77,51 @@
             android:textSize="20sp" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/b_confirm_role"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/b_confirm"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/i_map"
-        app:layout_constraintTop_toBottomOf="@+id/radioGrp_Bot" />
+            <RadioGroup
+                android:id="@+id/radioGrp_Bot"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/radioGrp_Role"
+                app:layout_constraintStart_toEndOf="@+id/i_map"
+                app:layout_constraintTop_toBottomOf="@+id/radioGrp_Role">
 
-    <Button
-        android:id="@+id/b_back_role"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="@string/b_back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/i_map" />
+                <RadioButton
+                    android:id="@+id/rb_adc"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/role_adc"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_supp"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/role_support"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/b_confirm_role"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/b_confirm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGrp_Bot" />
+
+            <Button
+                android:id="@+id/b_back_role"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="@string/b_back"
+                app:layout_constraintEnd_toStartOf="@+id/b_confirm_role"
+                app:layout_constraintTop_toTopOf="@+id/b_confirm_role" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
