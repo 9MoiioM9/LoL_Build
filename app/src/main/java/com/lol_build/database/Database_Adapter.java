@@ -43,8 +43,8 @@ public class Database_Adapter extends RecyclerView.Adapter<Database_Adapter.MyVi
         String item_URL = "https://ddragon.leagueoflegends.com/cdn/"+ HomePage.VERSION+"/img/item/";
         String champion_URL = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/champion/";
 
-        holder.loadImg(champion_URL+matchupData.get(position).getChampionPlayer_name()+".png", holder.img_champP, holder.itemView.getContext());
-        holder.loadImg(champion_URL+matchupData.get(position).getChampionEnemy_name()+".png", holder.img_champE, holder.itemView.getContext());
+        holder.loadImg(champion_URL+matchupData.get(position).getChampionPlayer_name().replaceAll("[\\.\\'\\s]", "")+".png", holder.img_champP, holder.itemView.getContext());
+        holder.loadImg(champion_URL+matchupData.get(position).getChampionEnemy_name().replaceAll("[\\.\\'\\s]", "")+".png", holder.img_champE, holder.itemView.getContext());
         holder.loadImg(item_URL+matchupData.get(position).getItems_rec().get(0)+".png", holder.img_item1, holder.itemView.getContext());
         holder.loadImg(item_URL+matchupData.get(position).getItems_rec().get(1)+".png", holder.img_item2, holder.itemView.getContext());
         holder.loadImg(item_URL+matchupData.get(position).getItems_rec().get(2)+".png", holder.img_item3, holder.itemView.getContext());

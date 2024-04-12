@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.lol_build.database.Database_Adapter;
 import com.lol_build.database.MatchupDao;
@@ -36,17 +37,20 @@ public class Preferencies extends AppCompatActivity {
         loadDB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Thread(() -> {
-                    MatchupDao matchupDao = HomePage.database.matchupDao();
-                    matchupData = new ArrayList<>(matchupDao.getAll());
+                if(!(matchupData == null)){
+                    new Thread(() -> {
+                        MatchupDao matchupDao = HomePage.database.matchupDao();
+                        matchupData = new ArrayList<>(matchupDao.getAll());
 
-                    Database_Adapter adapter = new Database_Adapter(matchupData);
+                        Database_Adapter adapter = new Database_Adapter(matchupData);
 
-                    runOnUiThread(() -> {
-                        items.setAdapter(adapter);
-                        items.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                    });
-                }).start();
+                        runOnUiThread(() -> {
+                            items.setAdapter(adapter);
+                            items.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                        });
+                    }).start();
+                }else Toast.makeText(getApplicationContext(), "Database is empty !", Toast.LENGTH_SHORT).show();
+
             }
         });
 

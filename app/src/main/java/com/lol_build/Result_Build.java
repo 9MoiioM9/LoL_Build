@@ -40,6 +40,7 @@ public class Result_Build extends AppCompatActivity {
     protected ImageView item6;
     private Button back_button;
     private Button save_button;
+    private Button share_button;
     public Champion player_champion;
     public Champion enemy_champion;
     private MatchupData matchupData;
@@ -78,6 +79,7 @@ public class Result_Build extends AppCompatActivity {
         item6 = findViewById(R.id.item_6);
         save_button = findViewById(R.id.save_button);
         back_button = findViewById(R.id.back_btn);
+        share_button = findViewById(R.id.btn_share);
 
 
 
@@ -135,6 +137,17 @@ public class Result_Build extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        share_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://u.gg/lol/champions/"+player_champion.getId()+"/build?opp="+enemy_champion.getId()+"&rank=overall";
+                Intent shareURL = new Intent(Intent.ACTION_SEND);
+                shareURL.setType("text/plain");
+                shareURL.putExtra(Intent.EXTRA_TEXT, url);
+                startActivity(Intent.createChooser(shareURL, "Share the URL of the matchup"));
             }
         });
 

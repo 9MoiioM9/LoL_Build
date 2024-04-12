@@ -63,4 +63,5 @@
     <string name="txt_Preferencies">Welcome in Preferencies</string>
     <string name="btn_Search">Search</string>
     <string name="stillProgess">Coming soon ...</string>
+    <string name="btn_share">Share</string>
 </resources>

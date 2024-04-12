@@ -77,6 +77,8 @@ public class HomePage extends AppCompatActivity {
         search_profil_button = findViewById(R.id.b_profil_search);
 
 
+
+
         new Thread(() -> {
             //Request for version
             String jsonData;
