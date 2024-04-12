@@ -19,24 +19,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/info_champion_editText"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:autofillHints="username"
-        android:ems="10"
-        android:hint="@string/search_champion_txt"
-        android:inputType="text"
-        android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="@+id/txt_info_champion"
-        app:layout_constraintTop_toBottomOf="@+id/txt_info_champion" />
-
     <Spinner
         android:id="@+id/info_champion_spinner"
-        android:layout_width="350dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        app:layout_constraintStart_toStartOf="@+id/info_champion_editText"
-        app:layout_constraintTop_toBottomOf="@+id/info_champion_editText" />
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_info_champion" />
 
     <ScrollView
         android:id="@+id/scroll_info_champion"

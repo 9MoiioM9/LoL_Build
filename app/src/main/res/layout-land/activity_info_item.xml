@@ -9,13 +9,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-16dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/txt_info_item"
@@ -25,23 +24,19 @@
                 android:text="@string/info_item_txt"
                 android:textAlignment="center"
                 android:textSize="24sp"
-                android:typeface="serif" />
-
-            <EditText
-                android:id="@+id/info_item_editText"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="5dp"
-                android:autofillHints="username"
-                android:ems="10"
-                android:hint="@string/search_item_txt"
-                android:inputType="text" />
+                android:typeface="serif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Spinner
                 android:id="@+id/info_item_spinner"
-                android:layout_width="250dp"
-                android:layout_height="50dp" />
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_info_item" />
 
             <ImageView
                 android:id="@+id/icon_item"
@@ -49,26 +44,34 @@
                 android:layout_height="150dp"
                 android:layout_marginTop="10dp"
                 android:contentDescription="@string/txt_none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/info_item_spinner"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
             <TextView
                 android:id="@+id/item_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:text="@string/name_item"
                 android:textAlignment="center"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/icon_item"
+                app:layout_constraintStart_toStartOf="@+id/icon_item"
+                app:layout_constraintTop_toBottomOf="@+id/icon_item" />
 
             <TextView
                 android:id="@+id/t_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/desc_item"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/item_name" />
 
             <TextView
                 android:id="@+id/desc"
@@ -78,97 +81,100 @@
                 android:text="@string/txt_none"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/item_into"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_weight="1"
-                android:text="@string/item_into"
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/intos_item"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:text="@string/txt_none"
-                android:textAlignment="viewStart"
-                android:textSize="16sp"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/t_desc"
+                app:layout_constraintTop_toBottomOf="@+id/t_desc" />
 
             <TextView
                 android:id="@+id/t_tags"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:text="@string/item_tags"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/t_desc"
+                app:layout_constraintTop_toBottomOf="@+id/desc" />
 
             <TextView
                 android:id="@+id/tags"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:text="@string/txt_none"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@+id/t_tags"
+                app:layout_constraintStart_toEndOf="@+id/t_tags"
+                app:layout_constraintTop_toTopOf="@+id/t_tags" />
 
             <TextView
                 android:id="@+id/t_gold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:text="@string/item_cost"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/t_tags"
+                app:layout_constraintTop_toBottomOf="@+id/t_tags" />
 
             <TextView
                 android:id="@+id/gold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:text="@string/txt_none"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/t_gold"
+                app:layout_constraintStart_toEndOf="@+id/t_gold"
+                app:layout_constraintTop_toTopOf="@+id/t_gold" />
 
             <TextView
                 android:id="@+id/t_sell"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:text="@string/item_sell"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/gold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/gold"
+                app:layout_constraintTop_toTopOf="@+id/gold" />
 
             <TextView
                 android:id="@+id/sell"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:text="@string/txt_none"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/t_sell"
+                app:layout_constraintTop_toTopOf="@+id/t_sell"
+                app:layout_constraintVertical_bias="0.0" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switch_info_item"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:text="@string/switch_item"
-                android:textSize="20sp" />
-        </LinearLayout>
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/info_item_spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/info_item_spinner"
+                app:layout_constraintTop_toTopOf="@+id/info_item_spinner" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 

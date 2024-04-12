@@ -34,6 +34,8 @@ public class champion_item extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_champion_item);
 
+        Log.w(HomePage.Tag, "Welcome in the champion_item");
+
         icon_champion = findViewById(R.id.icon_champion);
         name = findViewById(R.id.champion_name);
         title = findViewById(R.id.champion_title);

@@ -1,8 +1,6 @@
 package com.lol_build;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lol_build.api.Champion;
 import com.lol_build.database.MatchupDao;
@@ -33,8 +32,6 @@ public class Result_Build extends AppCompatActivity {
     protected ImageView rune2;
     protected ImageView rune3;
     protected ImageView rune4;
-    protected ImageView rune5;
-    protected ImageView rune6;
     protected ImageView item1;
     protected ImageView item2;
     protected ImageView item3;
@@ -52,13 +49,14 @@ public class Result_Build extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_build);
+        Log.w(HomePage.Tag, "Welcome in the Result_Build");
 
 
         Intent intent = getIntent();
         player_champion = (Champion) intent.getSerializableExtra("player_champion");
         enemy_champion = (Champion) intent.getSerializableExtra("enemy_champion");
 
-        matchupData = new MatchupData(Selection_Role.ROLE, player_champion.getName(), enemy_champion.getName());
+        matchupData = new MatchupData(Selection_Role.ROLE, player_champion.getName(), enemy_champion.getName(), ResulBuildRequest.items_rec);
 
         background = findViewById(R.id.background_img);
         winRate = findViewById(R.id.winRate);
@@ -72,8 +70,6 @@ public class Result_Build extends AppCompatActivity {
         rune2 = findViewById(R.id.sous_rune1);
         rune3 = findViewById(R.id.sous_rune2);
         rune4 = findViewById(R.id.sous_rune3);
-        rune5 = findViewById(R.id.sous_rune4);
-        rune6 = findViewById(R.id.sous_rune5);
         item1 = findViewById(R.id.item_1);
         item2 = findViewById(R.id.item_2);
         item3 = findViewById(R.id.item_3);
@@ -121,12 +117,17 @@ public class Result_Build extends AppCompatActivity {
                     matchupDao.insert(matchupData);
 
                     for(MatchupData m : matchupDao.getAll()){
-                        Log.w(HomePage.Tag, "CHampion p : " + m.getChampionPlayer_name());
-                        Log.w(HomePage.Tag, "CHampion e : " + m.getChampionEnemy_name());
+                        Log.w(HomePage.Tag, "Champion p : " + m.getChampionPlayer_name());
+                        Log.w(HomePage.Tag, "Champion e : " + m.getChampionEnemy_name());
                         Log.w(HomePage.Tag, "Role  : " + m.getRole());
+                        for(String s : m.getItems_rec()){
+                            Log.w(HomePage.Tag, "Item  : " + s);
+                        }
                     }
 
                 }).start();
+
+                Toast.makeText(getApplicationContext(), "Your Role, Your matchup and your items have been saved !", Toast.LENGTH_SHORT).show();
             }
         });
 

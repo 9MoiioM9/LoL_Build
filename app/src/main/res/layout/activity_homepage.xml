@@ -64,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/preferencies"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@drawable/lol_homepage" />
 
     <Button
         android:id="@+id/b_profil_search"

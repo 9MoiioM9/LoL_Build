@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,12 +26,10 @@ import okhttp3.OkHttpClient;
 
 public class Info_item extends AppCompatActivity {
 
-    public EditText search_item;
     public Spinner spinner_items;
     public ImageView icon_Item;
     public TextView nameItem;
     public TextView descItem;
-    public TextView items_into;
     public TextView tagsItem;
     public TextView itemGold;
     public TextView itemSell;
@@ -41,12 +41,12 @@ public class Info_item extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_item);
 
-        search_item = findViewById(R.id.info_item_editText);
+        Log.w(HomePage.Tag, "Welcome in the Info_Item");
+
         spinner_items = findViewById(R.id.info_item_spinner);
         icon_Item = findViewById(R.id.icon_item);
         nameItem = findViewById(R.id.item_name);
         descItem = findViewById(R.id.desc);
-        items_into = findViewById(R.id.intos_item);
         tagsItem = findViewById(R.id.tags);
         itemGold = findViewById(R.id.gold);
         itemSell = findViewById(R.id.sell);
@@ -77,6 +77,7 @@ public class Info_item extends AppCompatActivity {
                 changeListItem();
             }
         });
+
 
     }
 
@@ -109,7 +110,6 @@ public class Info_item extends AppCompatActivity {
                 if(item.getPlaintext() != null)
                     descItem.setText(item.getPlaintext());
 
-                items_into.setText(getString(item.getInto()));
                 tagsItem.setText(getString(item.getTags()));
                 itemGold.setText(String.valueOf(item.getTotalFromGold()));
                 itemSell.setText(String.valueOf(item.getSellFromGold()));

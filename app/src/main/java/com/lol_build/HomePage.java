@@ -61,6 +61,7 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+        Log.w(Tag, "Welcome in the HomePage");
 
         database = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, AppDatabase.DATABASE_NAME).build();
@@ -170,17 +171,6 @@ public class HomePage extends AppCompatActivity {
                 throw new RuntimeException(e);
             }
 
-            String url = "https://ddragon.leagueoflegends.com/cdn/"+VERSION+"/img/spell/AhriR.png";
-
-            runOnUiThread(() -> {
-                ImageLoader imageLoader = new ImageLoader.Builder(getApplicationContext()).build();
-                imageLoader.enqueue(new ImageRequest.Builder(getApplicationContext())
-                        .data(url)
-                        .target(img_homepage)
-                        .build());
-
-
-            });
 
         }).start();
 
@@ -201,7 +191,6 @@ public class HomePage extends AppCompatActivity {
         machup_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.w(Tag, " avant le go_selecRole");
                 go_selecRole(v);
             }
         });
@@ -235,10 +224,8 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void go_selecRole(View view){
-        Log.w(Tag, " dans le go_selecRole au debut");
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         Intent intent = new Intent(this, Selection_Role.class);
-        Log.w(Tag, " dans le go_selecRole avant start activity");
         startActivity(intent);
     }
 

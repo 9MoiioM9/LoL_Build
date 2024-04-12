@@ -50,9 +50,16 @@
     <string name="txt_skills_order">Ordre des compétences :</string>
     <string name="txt_summs">"Sorts d'invocateur : "</string>
     <string name="txt_itemsbuild">Build recommandé pour la game :</string>
-    <string name="txt_runes">"Runes : "</string>
+    <string name="txt_runes">"Runes principales : "</string>
     <string name="txt_WinRate">WinRate :</string>
     <string name="text_pseudo">entrer un pseudo</string>
     <string name="search_pseudo">Recherche</string>
     <string name="b_search_profil">Rechercher un joueur</string>
+    <string name="role_select_db">Role :</string>
+    <string name="championP_db">Votre champion :</string>
+    <string name="championE_db">Opposant :</string>
+    <string name="save_btn">Sauvegarder</string>
+    <string name="btn_load_db">Charger la sauvegarde</string>
+    <string name="txt_Preferencies">Bienvenue dans les préférences</string>
+    <string name="btn_Search">Rechercher</string>
 </resources>

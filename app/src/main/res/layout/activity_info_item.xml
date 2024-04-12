@@ -19,25 +19,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/info_item_editText"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:autofillHints="username"
-        android:ems="10"
-        android:hint="@string/search_item_txt"
-        android:inputType="text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_info_item" />
-
     <Spinner
         android:id="@+id/info_item_spinner"
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        app:layout_constraintStart_toStartOf="@+id/info_item_editText"
-        app:layout_constraintTop_toBottomOf="@+id/info_item_editText" />
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_info_item" />
 
     <ImageView
         android:id="@+id/icon_item"
@@ -87,31 +76,6 @@
         app:layout_constraintTop_toBottomOf="@+id/t_desc" />
 
     <TextView
-        android:id="@+id/item_into"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_weight="1"
-        android:text="@string/item_into"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/t_desc"
-        app:layout_constraintTop_toBottomOf="@+id/desc" />
-
-    <TextView
-        android:id="@+id/intos_item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_weight="1"
-        android:text="@string/txt_none"
-        android:textAlignment="viewStart"
-        android:textSize="16sp"
-        android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="@+id/item_into"
-        app:layout_constraintTop_toBottomOf="@+id/item_into" />
-
-    <TextView
         android:id="@+id/t_tags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -120,8 +84,8 @@
         android:text="@string/item_tags"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/item_into"
-        app:layout_constraintTop_toBottomOf="@+id/intos_item" />
+        app:layout_constraintStart_toStartOf="@+id/t_desc"
+        app:layout_constraintTop_toBottomOf="@+id/desc" />
 
     <TextView
         android:id="@+id/tags"

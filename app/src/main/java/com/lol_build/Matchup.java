@@ -42,8 +42,8 @@ public class Matchup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.w(HomePage.Tag, "Ici on est dans matchup");
         setContentView(R.layout.activity_matchup);
+        Log.w(HomePage.Tag, "Welcome in the Matchup");
 
 
         player_choice = findViewById(R.id.spinner_player);

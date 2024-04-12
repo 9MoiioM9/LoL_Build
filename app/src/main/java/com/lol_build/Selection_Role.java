@@ -38,6 +38,8 @@ public class Selection_Role extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection_role);
 
+        Log.w(HomePage.Tag, "Welcome in the Selection_Role");
+
         confirm_button = findViewById(R.id.b_confirm_role);
         back_button = findViewById(R.id.b_back_role);
         map_img = findViewById(R.id.i_map);
@@ -76,7 +78,7 @@ public class Selection_Role extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    ROLE = "top";
+                    ROLE = "Top";
                 }
             }
         });
@@ -85,7 +87,7 @@ public class Selection_Role extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    ROLE = "jungle";
+                    ROLE = "Jungle";
                 }
             }
         });
@@ -94,7 +96,7 @@ public class Selection_Role extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    ROLE = "middle";
+                    ROLE = "Mid";
                 }
             }
         });
@@ -103,7 +105,7 @@ public class Selection_Role extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    ROLE = "bot";
+                    ROLE = "Adc";
                 }
             }
         });
@@ -112,7 +114,7 @@ public class Selection_Role extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    ROLE = "supporter";
+                    ROLE = "Support";
                 }
             }
         });

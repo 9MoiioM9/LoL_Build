@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -24,7 +25,6 @@ import okhttp3.OkHttpClient;
 public class Info_champion extends AppCompatActivity {
 
     private Spinner champion_spinner;
-    private EditText champion_searched;
     private CardView item_champion;
     private ImageView icon_champion;
     private TextView name;
@@ -32,7 +32,6 @@ public class Info_champion extends AppCompatActivity {
     private TextView hp;
     private TextView mana;
     private TextView ad;
-    private TextView ap;
     private TextView armor;
     private TextView resistance_magique;
     private TextView as;
@@ -43,9 +42,10 @@ public class Info_champion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_champion);
 
+        Log.w(HomePage.Tag, "Welcome in the Info_Champion");
+
 
         champion_spinner = findViewById(R.id.info_champion_spinner);
-        champion_searched = findViewById(R.id.info_champion_editText);
         item_champion = findViewById(R.id.item_info_champion);
 
         icon_champion = findViewById(R.id.icon_champion);
@@ -54,7 +54,6 @@ public class Info_champion extends AppCompatActivity {
         hp = findViewById(R.id.hp_champion);
         mana = findViewById(R.id.mana_champion);
         ad = findViewById(R.id.atk);
-        ap = findViewById(R.id.ap);
         armor = findViewById(R.id.armor);
         resistance_magique = findViewById(R.id.rm);
         as = findViewById(R.id.atkSpeed);
@@ -73,7 +72,7 @@ public class Info_champion extends AppCompatActivity {
 
                 Intent intent = new Intent(Info_champion.this, champion_item.class);
                 intent.putExtra("champion", selected_champion);
-                //startActivity(intent);
+
 
             }
 
@@ -82,6 +81,7 @@ public class Info_champion extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void loadChampion(Champion champion){

@@ -26,7 +26,7 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
     private List<String> skillsOrders = new ArrayList<>();
     private List<String> skillsOrdersLetters = new ArrayList<>();
     private List<String> runes = new ArrayList<>();
-    private List<String> items_rec = new ArrayList<>();
+    public static List<String> items_rec = new ArrayList<>();
     private List<String> summonner_spells = new ArrayList<>();
 
     @Override
@@ -80,19 +80,18 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
         loadImg(runes.get(2), resultBuild.rune3);
         loadImg(runes.get(3), resultBuild.rune4);
         Log.d(HomePage.Tag, "Items ...");
-        loadImg(item_URL+items_rec.get(0), resultBuild.item1);
-        loadImg(item_URL+items_rec.get(1), resultBuild.item2);
-        loadImg(item_URL+items_rec.get(2), resultBuild.item3);
-        loadImg(item_URL+items_rec.get(3), resultBuild.item4);
-        loadImg(item_URL+items_rec.get(4), resultBuild.item5);
-        loadImg(item_URL+items_rec.get(5), resultBuild.item6);
+        loadImg(item_URL+items_rec.get(0)+".png", resultBuild.item1);
+        loadImg(item_URL+items_rec.get(1)+".png", resultBuild.item2);
+        loadImg(item_URL+items_rec.get(2)+".png", resultBuild.item3);
+        loadImg(item_URL+items_rec.get(3)+".png", resultBuild.item4);
+        loadImg(item_URL+items_rec.get(4)+".png", resultBuild.item5);
+        loadImg(item_URL+items_rec.get(5)+".png", resultBuild.item6);
         Log.d(HomePage.Tag, "Summoner Spells");
 
         loadImg(summonerSpells_URL+summonner_spells.get(0), resultBuild.summonerSpell1);
         loadImg(summonerSpells_URL+summonner_spells.get(1), resultBuild.summonerSpell2);
 
         Log.d(HomePage.Tag, "Fin Loading Images");
-
 
     }
 
@@ -152,13 +151,7 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
             Document document = Jsoup.connect(url).get();
 
             Log.w(HomePage.Tag, "Rune :  ");
-            /*
-            Element div_RuneRec = document.selectFirst("div.perks");
-            Elements div_runeName = div_RuneRec.select("div.perk.keystone.perk-active img");
-            String runeSRC = div_runeName.attr("src");
-            runes.add(runeSRC);
 
-             */
 
             Elements div_PrimaryRune = document.select("div.rune-tree_v2.primary-tree");
             //Ici Take the first elements to take only the 4 runes needed because in the HTML page there are two Element with the same
@@ -207,14 +200,12 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
                         String indexID = itemURL.substring(indexItem + 1);
                         String itemID = indexID.substring(0, indexID.lastIndexOf('.'));
 
-                        items_rec.add(itemID + ".png");
+                        items_rec.add(itemID);
                     }
 
                 }
             }else
                 Log.w(HomePage.Tag, "ELEMENT NULL ");
-
-
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -234,14 +225,11 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
 
             Element div_entete_summs = document.selectFirst("div.content-section_content.summoner-spells");
             if (div_entete_summs != null) {
-                Log.w(HomePage.Tag, "Div Summs Found");
                 Elements div_summs = div_entete_summs.select("div.flex img");
-                Log.w(HomePage.Tag, "Taille  :"+div_summs.size());
                 for(Element summs_info : div_summs){
 
                     //Elements img_element = summs_info.select("div img");
                     String summs_src = summs_info.attr("src");
-                    Log.w(HomePage.Tag, "Récupération URL Src  :"+summs_src.length());
                     int indexSumms = summs_src.lastIndexOf('/');
                     String indexID = summs_src.substring(indexSumms + 1);
                     String summs = indexID.substring(0, indexID.lastIndexOf('.'));

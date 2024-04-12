@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -23,6 +24,8 @@ public class Search_profil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_profil);
+
+        Log.w(HomePage.Tag, "Welcome in the Search_Profil");
 
         pseudo = findViewById(R.id.in_pseudo);
         search_pseudo = findViewById(R.id.b_search_pseudo);

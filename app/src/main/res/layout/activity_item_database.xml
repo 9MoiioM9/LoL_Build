@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txt_role_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/role_select_db"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/roleDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/txt_none"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_role_db"
+        app:layout_constraintStart_toEndOf="@+id/txt_role_db"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_championP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/championP_db"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/txt_role_db"
+        app:layout_constraintTop_toBottomOf="@+id/icon_champP" />
+
+    <TextView
+        android:id="@+id/championP_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_none"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_championP"
+        app:layout_constraintStart_toEndOf="@+id/txt_championP"
+        app:layout_constraintTop_toTopOf="@+id/txt_championP" />
+
+    <ImageView
+        android:id="@+id/icon_vs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/icon_champP"
+        app:layout_constraintStart_toEndOf="@+id/icon_champP"
+        app:layout_constraintTop_toTopOf="@+id/icon_champP"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <TextView
+        android:id="@+id/championE_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/txt_none"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/championP_db"
+        app:layout_constraintStart_toEndOf="@+id/icon_vs"
+        app:layout_constraintTop_toTopOf="@+id/championP_db" />
+
+    <ImageView
+        android:id="@+id/icon_champP"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/championP_db"
+        app:layout_constraintTop_toBottomOf="@+id/txt_role_db"
+        app:srcCompat="@drawable/lol_loading" />
+
+    <ImageView
+        android:id="@+id/icon_champE"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="@+id/championE_db"
+        app:layout_constraintTop_toTopOf="@+id/icon_champP"
+        app:srcCompat="@drawable/lol_loading" />
+
+    <TextView
+        android:id="@+id/txt_items_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/txt_itemsbuild"
+        app:layout_constraintStart_toStartOf="@+id/txt_championP"
+        app:layout_constraintTop_toBottomOf="@+id/txt_championP" />
+
+    <LinearLayout
+        android:id="@+id/items_saved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/txt_items_db"
+        app:layout_constraintTop_toBottomOf="@+id/txt_items_db">
+
+        <ImageView
+            android:id="@+id/img_item1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/lol_loading" />
+
+        <ImageView
+            android:id="@+id/img_item2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/lol_loading" />
+
+        <ImageView
+            android:id="@+id/img_item3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/lol_loading" />
+
+        <ImageView
+            android:id="@+id/img_item4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/lol_loading" />
+
+        <ImageView
+            android:id="@+id/img_item5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/lol_loading" />
+
+        <ImageView
+            android:id="@+id/img_item6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/lol_loading" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
