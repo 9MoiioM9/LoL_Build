@@ -18,9 +18,6 @@
             android:name=".Search_profil"
             android:exported="false" />
         <activity
-            android:name=".Other_match_item"
-            android:exported="false" />
-        <activity
             android:name=".champion_item"
             android:exported="false" />
         <activity

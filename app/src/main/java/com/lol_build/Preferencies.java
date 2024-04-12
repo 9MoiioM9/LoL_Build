@@ -21,6 +21,7 @@ public class Preferencies extends AppCompatActivity {
     private Button loadDB;
     public RecyclerView items;
     public ArrayList<MatchupData> matchupData;
+    public boolean isNull;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,28 +29,28 @@ public class Preferencies extends AppCompatActivity {
         setContentView(R.layout.activity_preferencies);
 
         Log.w(HomePage.Tag, "Welcome in the Preferencies");
+        isNull = false;
 
         back = findViewById(R.id.pref_back);
         loadDB = findViewById(R.id.pref_load);
-
         items = findViewById(R.id.recycler_pref);
 
         loadDB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!(matchupData == null)){
-                    new Thread(() -> {
-                        MatchupDao matchupDao = HomePage.database.matchupDao();
-                        matchupData = new ArrayList<>(matchupDao.getAll());
 
-                        Database_Adapter adapter = new Database_Adapter(matchupData);
+                new Thread(() -> {
+                    MatchupDao matchupDao = HomePage.database.matchupDao();
+                    matchupData = new ArrayList<>(matchupDao.getAll());
 
-                        runOnUiThread(() -> {
-                            items.setAdapter(adapter);
-                            items.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                        });
-                    }).start();
-                }else Toast.makeText(getApplicationContext(), "Database is empty !", Toast.LENGTH_SHORT).show();
+                    Database_Adapter adapter = new Database_Adapter(matchupData);
+
+                    runOnUiThread(() -> {
+                        items.setAdapter(adapter);
+                        items.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    });
+
+                }).start();
 
             }
         });
