@@ -171,6 +171,7 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
 
     public void loadItemsFromWeb(){
         try {
+            items_rec.clear();
             String url = "https://mobalytics.gg/lol/champions/"
                     +resultBuild.player_champion.getId()
                     +"/build?rank=All";

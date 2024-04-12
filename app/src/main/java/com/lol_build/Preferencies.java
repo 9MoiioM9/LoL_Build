@@ -36,13 +36,17 @@ public class Preferencies extends AppCompatActivity {
         loadDB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MatchupDao matchupDao = HomePage.database.matchupDao();
-                matchupData = new ArrayList<>(matchupDao.getAll());
+                new Thread(() -> {
+                    MatchupDao matchupDao = HomePage.database.matchupDao();
+                    matchupData = new ArrayList<>(matchupDao.getAll());
 
-                Database_Adapter adapter = new Database_Adapter(matchupData);
+                    Database_Adapter adapter = new Database_Adapter(matchupData);
 
-                items.setAdapter(adapter);
-                items.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    runOnUiThread(() -> {
+                        items.setAdapter(adapter);
+                        items.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    });
+                }).start();
             }
         });
 
