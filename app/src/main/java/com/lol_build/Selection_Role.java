@@ -54,7 +54,7 @@ public class Selection_Role extends AppCompatActivity {
         rb_support = findViewById(R.id.rb_supp);
 
         new Thread(() -> {
-            String img_url = "https://ddragon.leagueoflegends.com/cdn/6.8.1/img/map/map11.png";
+            String img_url = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/map/map11.png";
 
             runOnUiThread(() -> {
                 ImageLoader imageLoader = new ImageLoader.Builder(getApplicationContext()).build();
@@ -124,7 +124,8 @@ public class Selection_Role extends AppCompatActivity {
             public void onClick(View v) {
                 if(ROLE.length() > 0){
                     Log.w(HomePage.Tag, " SUIVANT -> Matchup ");
-                    go_Matchup(v);
+                    Intent intent = new Intent(Selection_Role.this, Matchup.class);
+                    startActivity(intent);
                 }else Toast.makeText(getApplicationContext(), "Warning : no position have been picked !", Toast.LENGTH_SHORT).show();
             }
         });
@@ -140,11 +141,5 @@ public class Selection_Role extends AppCompatActivity {
 
 
 
-    }
-
-    public void go_Matchup(View view){
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        Intent intent = new Intent(this, Matchup.class);
-        startActivity(intent);
     }
 }

@@ -1,4 +1,4 @@
-package com.lol_build.database;
+package com.lol_build.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,13 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lol_build.HomePage;
 import com.lol_build.R;
+import com.lol_build.database.MatchupData;
 
 import java.util.List;
 
 import coil.ImageLoader;
 import coil.request.ImageRequest;
 
-public class Database_Adapter extends RecyclerView.Adapter<Database_Adapter.MyViewHolder>{
+public class Database_Adapter extends RecyclerView.Adapter<Database_Adapter.MyViewHolderDatabase>{
 
     List<MatchupData> matchupData;
 
@@ -27,14 +28,14 @@ public class Database_Adapter extends RecyclerView.Adapter<Database_Adapter.MyVi
     }
     @NonNull
     @Override
-    public Database_Adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Database_Adapter.MyViewHolderDatabase onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.activity_item_database, parent, false);
-        return new Database_Adapter.MyViewHolder(view);
+        return new Database_Adapter.MyViewHolderDatabase(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Database_Adapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Database_Adapter.MyViewHolderDatabase holder, int position) {
         holder.champion_enemy.setText(matchupData.get(position).getChampionEnemy_name());
         holder.champion_player.setText(matchupData.get(position).getChampionPlayer_name());
         holder.role.setText(matchupData.get(position).getRole());
@@ -64,7 +65,7 @@ public class Database_Adapter extends RecyclerView.Adapter<Database_Adapter.MyVi
 
 
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolderDatabase extends RecyclerView.ViewHolder{
 
         private TextView champion_player;
         private TextView champion_enemy;
@@ -78,7 +79,7 @@ public class Database_Adapter extends RecyclerView.Adapter<Database_Adapter.MyVi
         private ImageView img_item5;
         private ImageView img_item6;
 
-        MyViewHolder(View itemView){
+        MyViewHolderDatabase(View itemView){
             super(itemView);
             champion_player = itemView.findViewById(R.id.championP_db);
             champion_enemy = itemView.findViewById(R.id.championE_db);

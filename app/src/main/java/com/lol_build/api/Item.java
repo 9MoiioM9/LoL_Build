@@ -20,6 +20,17 @@ public class Item {
     public String getName() {
         return name;
     }
+
+    public String getDescription() {
+        //\n to decorate the description
+        description = description.replaceAll("<br>", "\n");
+        //Transforme String in version HTML
+        description = description.replace("\\u003C", "<").replace("\\u003E", ">");
+        description = description.replaceAll("\\<.*?\\>", "");
+
+        return description;
+    }
+
     public String getPlaintext() {
         return plaintext;
     }

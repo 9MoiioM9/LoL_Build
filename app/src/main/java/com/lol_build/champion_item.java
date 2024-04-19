@@ -9,11 +9,10 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.lol_build.api.Champion;
+import com.lol_build.api.Champions;
 
 import coil.ImageLoader;
 import coil.request.ImageRequest;
-import okhttp3.OkHttpClient;
 
 public class champion_item extends AppCompatActivity {
     private ImageView icon_champion;
@@ -50,7 +49,7 @@ public class champion_item extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        Champion champion_spinner = (Champion) intent.getSerializableExtra("champion");
+        Champions champion_spinner = (Champions) intent.getSerializableExtra("champion");
 
 
 
@@ -61,10 +60,10 @@ public class champion_item extends AppCompatActivity {
 
     }
 
-    public void loadChampion(Champion champion){
+    public void loadChampion(Champions champion){
         new Thread(() -> {
 
-            String url = "https://ddragon.leagueoflegends.com/cdn/14.7.1/img/champion/"+champion.getId()+".png";
+            String url = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/champion/"+champion.getId()+".png";
 
             runOnUiThread(() -> {
                 ImageLoader imageLoader = new ImageLoader.Builder(getApplicationContext()).build();

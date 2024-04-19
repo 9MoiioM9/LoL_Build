@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,15 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoL_Build"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".Search_profil"
+            android:name=".infos.Preferencies"
+            android:exported="false" />
+        <activity
+            android:name=".infos.Matchs_History"
+            android:exported="false" />
+        <activity
+            android:name=".Item_match"
+            android:exported="false" />
+        <activity
+            android:name=".infos.Info_Player"
             android:exported="false" />
         <activity
             android:name=".champion_item"
             android:exported="false" />
         <activity
-            android:name=".Info_champion"
+            android:name=".infos.Info_champion"
             android:exported="false" />
         <activity
             android:name=".Result_Build"
@@ -30,17 +39,17 @@
             android:name=".Matchup"
             android:exported="false" />
         <activity
-            android:name=".Info_item"
+            android:name=".infos.Info_item"
             android:exported="false" />
         <activity
-            android:name=".Preferencies"
+            android:name=".infos.User_History"
             android:exported="false" />
         <activity
             android:name=".Selection_Role"
             android:exported="false" />
         <activity
             android:name=".HomePage"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.lol_build;
+package com.lol_build.infos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
@@ -10,15 +10,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.lol_build.HomePage;
+import com.lol_build.R;
 import com.lol_build.api.Item;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import coil.ImageLoader;
 import coil.request.ImageRequest;
@@ -28,12 +26,12 @@ public class Info_item extends AppCompatActivity {
 
     public Spinner spinner_items;
     public ImageView icon_Item;
-    public TextView nameItem;
     public TextView descItem;
     public TextView tagsItem;
     public TextView itemGold;
     public TextView itemSell;
     public SwitchCompat switch_items;
+    private Button btn_back;
     private boolean switch_isActived = false;
 
     @Override
@@ -44,13 +42,13 @@ public class Info_item extends AppCompatActivity {
         Log.w(HomePage.Tag, "Welcome in the Info_Item");
 
         spinner_items = findViewById(R.id.info_item_spinner);
-        icon_Item = findViewById(R.id.icon_item);
-        nameItem = findViewById(R.id.item_name);
+        icon_Item = findViewById(R.id.icon_info_item);
         descItem = findViewById(R.id.desc);
         tagsItem = findViewById(R.id.tags);
         itemGold = findViewById(R.id.gold);
         itemSell = findViewById(R.id.sell);
         switch_items = findViewById(R.id.switch_info_item);
+        btn_back = findViewById(R.id.info_item_back);
 
         changeListItem();
 
@@ -77,6 +75,14 @@ public class Info_item extends AppCompatActivity {
                 changeListItem();
             }
         });
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
 
 
     }
@@ -106,30 +112,22 @@ public class Info_item extends AppCompatActivity {
                         .target(icon_Item)
                         .build());
 
-                nameItem.setText(item.getName());
-                if(item.getPlaintext() != null)
-                    descItem.setText(item.getPlaintext());
+                descItem.setText(item.getDescription());
 
-                tagsItem.setText(getString(item.getTags()));
+                if(item.getTags() !=null) {
+                    StringBuilder tagsText = new StringBuilder();
+                    for (String tag : item.getTags()) {
+                        tagsText.append(tag).append(", ");
+                    }
+                    tagsText.replace(tagsText.lastIndexOf(","), tagsText.length(), "");
+                    tagsItem.setText(tagsText.toString());
+                }
+
                 itemGold.setText(String.valueOf(item.getTotalFromGold()));
                 itemSell.setText(String.valueOf(item.getSellFromGold()));
 
             });
         }).start();
-    }
-
-    private String getString(List<String> list){
-        StringBuilder res = new StringBuilder();
-        if(list != null){
-            for(int i=0; i<list.size(); ++i){
-                if(i != 0){
-                    res.append(", ");
-                }
-                res.append(list.get(i));
-            }
-            return res.toString();
-        }else return "None";
-
     }
 
     private Item getItemFromName(String name){

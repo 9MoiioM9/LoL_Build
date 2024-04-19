@@ -1,4 +1,4 @@
-package com.lol_build;
+package com.lol_build.infos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -11,16 +11,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.lol_build.api.Champion;
+import com.lol_build.HomePage;
+import com.lol_build.R;
+import com.lol_build.api.Champions;
+import com.lol_build.champion_item;
 
 import coil.ImageLoader;
 import coil.request.ImageRequest;
-import okhttp3.OkHttpClient;
 
 public class Info_champion extends AppCompatActivity {
 
@@ -36,6 +37,7 @@ public class Info_champion extends AppCompatActivity {
     private TextView resistance_magique;
     private TextView as;
     private TextView speed;
+    private Button btn_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class Info_champion extends AppCompatActivity {
         resistance_magique = findViewById(R.id.rm);
         as = findViewById(R.id.atkSpeed);
         speed = findViewById(R.id.speed);
+        btn_back = findViewById(R.id.back_infoChampion);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(Info_champion.this, android.R.layout.simple_spinner_item, HomePage.nameOfAllChampions);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -66,7 +69,7 @@ public class Info_champion extends AppCompatActivity {
         champion_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Champion selected_champion = HomePage.champions.get(position);
+                Champions selected_champion = HomePage.champions.get(position);
                 loadChampion(selected_champion);
                 item_champion.setVisibility(View.VISIBLE);
 
@@ -82,12 +85,19 @@ public class Info_champion extends AppCompatActivity {
             }
         });
 
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
-    private void loadChampion(Champion champion){
+    private void loadChampion(Champions champion){
         new Thread(() -> {
 
-            String url = "https://ddragon.leagueoflegends.com/cdn/14.7.1/img/champion/"+champion.getId()+".png";
+            String url = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/champion/"+champion.getId()+".png";
 
             runOnUiThread(() -> {
                 ImageLoader imageLoader = new ImageLoader.Builder(getApplicationContext()).build();
@@ -127,6 +137,7 @@ public class Info_champion extends AppCompatActivity {
             });
 
 
-            }).start();
+        }).start();
     }
+
 }

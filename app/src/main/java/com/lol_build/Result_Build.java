@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.lol_build.api.Champion;
+import com.lol_build.api.Champions;
 import com.lol_build.database.MatchupDao;
 import com.lol_build.database.MatchupData;
 
@@ -41,8 +41,8 @@ public class Result_Build extends AppCompatActivity {
     private Button back_button;
     private Button save_button;
     private Button share_button;
-    public Champion player_champion;
-    public Champion enemy_champion;
+    public Champions player_champion;
+    public Champions enemy_champion;
     private MatchupData matchupData;
 
 
@@ -54,8 +54,8 @@ public class Result_Build extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        player_champion = (Champion) intent.getSerializableExtra("player_champion");
-        enemy_champion = (Champion) intent.getSerializableExtra("enemy_champion");
+        player_champion = (Champions) intent.getSerializableExtra("player_champion");
+        enemy_champion = (Champions) intent.getSerializableExtra("enemy_champion");
 
         matchupData = new MatchupData(Selection_Role.ROLE, player_champion.getName(), enemy_champion.getName(), ResulBuildRequest.items_rec);
 

@@ -1,4 +1,4 @@
-package com.lol_build;
+package com.lol_build.infos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,32 +8,31 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.lol_build.database.Database_Adapter;
+import com.lol_build.HomePage;
+import com.lol_build.R;
+import com.lol_build.adapter.Database_Adapter;
 import com.lol_build.database.MatchupDao;
 import com.lol_build.database.MatchupData;
 
 import java.util.ArrayList;
 
-public class Preferencies extends AppCompatActivity {
+public class User_History extends AppCompatActivity {
     private Button back;
     private Button loadDB;
     public RecyclerView items;
     public ArrayList<MatchupData> matchupData;
-    public boolean isNull;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preferencies);
+        setContentView(R.layout.activity_user_history);
 
-        Log.w(HomePage.Tag, "Welcome in the Preferencies");
-        isNull = false;
+        Log.w(HomePage.Tag, "Welcome in the User's History");
 
-        back = findViewById(R.id.pref_back);
-        loadDB = findViewById(R.id.pref_load);
-        items = findViewById(R.id.recycler_pref);
+        back = findViewById(R.id.userH_back);
+        loadDB = findViewById(R.id.userH_load);
+        items = findViewById(R.id.recycler_userH);
 
         loadDB.setOnClickListener(new View.OnClickListener() {
             @Override
