@@ -21,12 +21,14 @@ import android.widget.RadioGroup;
 import com.lol_build.HomePage;
 import com.lol_build.R;
 
+import org.intellij.lang.annotations.Language;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Preferencies extends AppCompatActivity {
-    //public static String LANGUAGE = "fr_FR";
 
+    private String new_language;
     private RadioGroup choice_en;
     private RadioButton rb_fr;
     private RadioButton rb_en;
@@ -56,6 +58,7 @@ public class Preferencies extends AppCompatActivity {
         btn_back = findViewById(R.id.pref_back);
         btn_apply = findViewById(R.id.pref_apply);
 
+        languageChecked();
 
         rb_en.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -71,8 +74,8 @@ public class Preferencies extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    HomePage.LANGUAGE = "fr_FR";
-                    Log.w(HomePage.Tag, "Langage is now : "+HomePage.LANGUAGE);
+                    new_language = "fr_FR";
+                    Log.w(HomePage.Tag, "Langage is now : "+new_language);
                     btn_apply.setVisibility(View.VISIBLE);
                 }
             }
@@ -82,8 +85,8 @@ public class Preferencies extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    HomePage.LANGUAGE = "en_GB";
-                    Log.w(HomePage.Tag, "Langage is now : "+HomePage.LANGUAGE);
+                    new_language = "en_GB";
+                    Log.w(HomePage.Tag, "Langage is now : "+new_language);
                     btn_apply.setVisibility(View.VISIBLE);
                 }
             }
@@ -93,8 +96,8 @@ public class Preferencies extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    HomePage.LANGUAGE = "en_US";
-                    Log.w(HomePage.Tag, "Langage is now : "+HomePage.LANGUAGE);
+                    new_language = "en_US";
+                    Log.w(HomePage.Tag, "Langage is now : "+new_language);
                     btn_apply.setVisibility(View.VISIBLE);
                 }
             }
@@ -104,8 +107,8 @@ public class Preferencies extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    HomePage.LANGUAGE = "it_IT";
-                    Log.w(HomePage.Tag, "Langage is now : "+HomePage.LANGUAGE);
+                    new_language = "it_IT";
+                    Log.w(HomePage.Tag, "Langage is now : "+new_language);
                     btn_apply.setVisibility(View.VISIBLE);
                 }
             }
@@ -148,13 +151,33 @@ public class Preferencies extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("language", HomePage.LANGUAGE);
+                editor.putString("language", new_language);
                 editor.apply();
 
                 finish();
             }
         });
 
+    }
+
+    public void languageChecked(){
+        switch (HomePage.LANGUAGE){
+            case "fr_FR" :
+                rb_fr.setChecked(true);
+                break;
+            case "en_GB" :
+                rb_gb.setChecked(true);
+                break;
+            case "en_US" :
+                rb_us.setChecked(true);
+                break;
+            case "it_IT" :
+                rb_it.setChecked(true);
+                break;
+            default :
+                Log.w(HomePage.Tag, "Language not detected ... ");
+                break;
+        }
     }
 
 }

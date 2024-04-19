@@ -51,7 +51,7 @@ public class HomePage extends AppCompatActivity {
 
     public static String VERSION;
     public static String LANGUAGE;
-    private Locale locale;
+    private Locale locale = Locale.getDefault();
     private Button history_button;
     private Button machup_button;
     private Button items_button;
@@ -73,7 +73,6 @@ public class HomePage extends AppCompatActivity {
         Log.w(Tag, "Welcome in the HomePage");
 
         //Management default parameters
-        locale = Locale.getDefault();
         LANGUAGE = locale.getLanguage()+'_'+locale.getCountry();
 
 
@@ -190,7 +189,9 @@ public class HomePage extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         String selectedLanguage = sharedPreferences.getString("language", locale.getLanguage()+'_'+locale.getCountry());
-        if(!Objects.equals(LANGUAGE, selectedLanguage)) {
+        Log.w(Tag, "Selected Language : "+selectedLanguage);
+        Log.w(Tag, "Language : "+LANGUAGE);
+        if(!LANGUAGE.contentEquals(selectedLanguage)) {
             //Set language for all request in the project
             LANGUAGE = selectedLanguage;
             Log.w(Tag, "New Language : "+LANGUAGE);
