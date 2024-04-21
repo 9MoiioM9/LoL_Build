@@ -152,15 +152,32 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
 
             Log.w(HomePage.Tag, "Rune :  ");
 
-
+            Log.w(HomePage.Tag, "Primary Runes : ");
+            //Primary Runes
             Elements div_PrimaryRune = document.select("div.rune-tree_v2.primary-tree");
-            //Ici Take the first elements to take only the 4 runes needed because in the HTML page there are two Element with the same
+            //Take the first elements to take only the 4 runes needed because in the HTML page there are two Element with the same id
             Elements img_elements = div_PrimaryRune.get(0).select("div.perk-row div.perks div.perk.perk-active img");
             for (Element img_element : img_elements) {
                 String src = img_element.attr("src");
                 Log.w(HomePage.Tag, "Src : " + src);
 
                 runes.add(src);
+            }
+            Log.w(HomePage.Tag, "Secondary Runes : ");
+            //Secondary Runes
+            Elements div_SecondaryRune = document.select("div.secondary-tree div.rune-tree_v2");
+            //Take the first elements to take only the 4 runes needed because in the HTML page there are two Element with the same id
+            img_elements = div_SecondaryRune.get(0).select("div.perk-row div.perks div.perk.perk-active img");
+            for (Element img_element : img_elements) {
+                String src = img_element.attr("src");
+                Log.w(HomePage.Tag, "Src : " + src);
+
+                runes.add(src);
+            }
+
+            Log.w(HomePage.Tag, "All Runes : ");
+            for(String s : runes){
+                Log.w(HomePage.Tag, s);
             }
 
 

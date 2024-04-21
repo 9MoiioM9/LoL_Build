@@ -78,4 +78,9 @@
     <string name="rb_en_US" translatable="false">US</string>
     <string name="rb_en_GB" translatable="false">GB</string>
     <string name="btn_apply">Apply</string>
+    <string name="img_content_back">background</string>
+    <string name="img_content_item">Item</string>
+    <string name="img_content_rune" translatable="false">Rune</string>
+    <string name="img_content_summoners">Summoner</string>
+    <string name="img_content_skill">Skill</string>
 </resources>

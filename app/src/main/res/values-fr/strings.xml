@@ -68,4 +68,8 @@
     <string name="rb_en">Anglais</string>
     <string name="rb_it">Italien</string>
     <string name="btn_apply">Appliquer</string>
+    <string name="img_content_back">Fond Ecran</string>
+    <string name="img_content_item">Objet</string>
+    <string name="img_content_summoners">Sort Invocateur</string>
+    <string name="img_content_skill">Compétence</string>
 </resources>

@@ -68,4 +68,8 @@
     <string name="rb_en">Inglese</string>
     <string name="rb_it">Italiano</string>
     <string name="btn_apply">Applicare</string>
+    <string name="img_content_back">Sfondo</string>
+    <string name="img_content_item">Oggetto</string>
+    <string name="img_content_summoners">Incantesimi dell\'evocatore</string>
+    <string name="img_content_skill">Competenze</string>
 </resources>
