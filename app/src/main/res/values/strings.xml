@@ -49,7 +49,7 @@
     <string name="txt_skills_order">Skills Order :</string>
     <string name="txt_summs">Summoner spells :</string>
     <string name="txt_itemsbuild">Build recommended for the game :</string>
-    <string name="txt_runes">Primary Runes :</string>
+    <string name="txt_primary_runes">Primary Runes</string>
     <string name="txt_WinRate">WinRate :</string>
     <string name="txt_match_history">Matchs\'s History of :</string>
     <string name="player_name" translatable="false">Username</string>
@@ -83,4 +83,5 @@
     <string name="img_content_rune" translatable="false">Rune</string>
     <string name="img_content_summoners">Summoner</string>
     <string name="img_content_skill">Skill</string>
+    <string name="txt_secondary_runes">Secondary Runes</string>
 </resources>

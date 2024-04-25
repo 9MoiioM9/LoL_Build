@@ -79,6 +79,8 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
         loadImg(runes.get(1), resultBuild.rune2);
         loadImg(runes.get(2), resultBuild.rune3);
         loadImg(runes.get(3), resultBuild.rune4);
+        loadImg(runes.get(4), resultBuild.rune5);
+        loadImg(runes.get(5), resultBuild.rune6);
         Log.d(HomePage.Tag, "Items ...");
         loadImg(item_URL+items_rec.get(0)+".png", resultBuild.item1);
         loadImg(item_URL+items_rec.get(1)+".png", resultBuild.item2);

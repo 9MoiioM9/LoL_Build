@@ -45,7 +45,7 @@
     <string name="txt_skills_order">Ordre des compétences :</string>
     <string name="txt_summs">"Sorts d'invocateur : "</string>
     <string name="txt_itemsbuild">Set d\'items recommandé pour la game :</string>
-    <string name="txt_runes">"Runes principales : "</string>
+    <string name="txt_primary_runes">Runes principales</string>
     <string name="txt_WinRate">Pourcentage de victoire :</string>
     <string name="txt_match_history">"Historique de matchs de : "</string>
     <string name="b_search_profil">Rechercher un joueur</string>
@@ -72,4 +72,5 @@
     <string name="img_content_item">Objet</string>
     <string name="img_content_summoners">Sort Invocateur</string>
     <string name="img_content_skill">Compétence</string>
+    <string name="txt_secondary_runes">Runes secondaires</string>
 </resources>

@@ -32,6 +32,8 @@ public class Result_Build extends AppCompatActivity {
     protected ImageView rune2;
     protected ImageView rune3;
     protected ImageView rune4;
+    protected ImageView rune5;
+    protected ImageView rune6;
     protected ImageView item1;
     protected ImageView item2;
     protected ImageView item3;
@@ -71,6 +73,8 @@ public class Result_Build extends AppCompatActivity {
         rune2 = findViewById(R.id.sous_rune1);
         rune3 = findViewById(R.id.sous_rune2);
         rune4 = findViewById(R.id.sous_rune3);
+        rune5 = findViewById(R.id.sous_rune4);
+        rune6 = findViewById(R.id.sous_rune5);
         item1 = findViewById(R.id.item_1);
         item2 = findViewById(R.id.item_2);
         item3 = findViewById(R.id.item_3);
