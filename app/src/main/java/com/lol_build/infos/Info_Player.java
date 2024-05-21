@@ -26,7 +26,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class Info_Player extends AppCompatActivity {
-    public final static String RIOT_API_KEY = "RGAPI-43b70175-c1d2-422a-bb32-6f74542043b5";
 
     private EditText username;
     private EditText tag;
