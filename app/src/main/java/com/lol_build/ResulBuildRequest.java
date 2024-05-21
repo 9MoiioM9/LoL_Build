@@ -161,7 +161,6 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
             Elements img_elements = div_PrimaryRune.get(0).select("div.perk-row div.perks div.perk.perk-active img");
             for (Element img_element : img_elements) {
                 String src = img_element.attr("src");
-                Log.w(HomePage.Tag, "Src : " + src);
 
                 runes.add(src);
             }
@@ -172,14 +171,8 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
             img_elements = div_SecondaryRune.get(0).select("div.perk-row div.perks div.perk.perk-active img");
             for (Element img_element : img_elements) {
                 String src = img_element.attr("src");
-                Log.w(HomePage.Tag, "Src : " + src);
 
                 runes.add(src);
-            }
-
-            Log.w(HomePage.Tag, "All Runes : ");
-            for(String s : runes){
-                Log.w(HomePage.Tag, s);
             }
 
 
@@ -205,12 +198,12 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
                 Elements div_ListItems = div_ItemsUsed.select("div.m-yhe5ws");
                 for (Element itemInfo : div_ListItems) {
                     List<Elements> list_items = new ArrayList<>();
-                    list_items.add(div_ItemsUsed.select("div.m-cnu2sv"));
-                    list_items.add(div_ItemsUsed.select("div.m-6n5cp5"));
-                    list_items.add(div_ItemsUsed.select("div.m-1t36u2t"));
-                    list_items.add(div_ItemsUsed.select("div.m-7dime2"));
-                    list_items.add(div_ItemsUsed.select("div.m-1xra8sf"));
-                    list_items.add(div_ItemsUsed.select("div.m-vwozlc"));
+                    list_items.add(div_ItemsUsed.select("div.m-rfjm2i"));
+                    list_items.add(div_ItemsUsed.select("div.m-juatvp"));
+                    list_items.add(div_ItemsUsed.select("div.m-3ygoqp"));
+                    list_items.add(div_ItemsUsed.select("div.m-1rjh3a6"));
+                    list_items.add(div_ItemsUsed.select("div.m-1egdgno"));
+                    list_items.add(div_ItemsUsed.select("div.m-8x1gh3"));
 
                     for(Elements it : list_items){
                         Elements item = it.select("div img");
