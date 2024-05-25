@@ -9,8 +9,8 @@
     <string name="b_item">Oggetti</string>
     <string name="b_champion">Campioni</string>
     <string name="choice_matchup">Partita della partita</string>
-    <string name="choice_player">La vostra scelta :</string>
-    <string name="choice_enemy">Scelta del nemico :</string>
+    <string name="choice_player">La vostra Campione</string>
+    <string name="choice_enemy">Campione del nemico</string>
     <string name="search_items">Scegliere un oggetti da analizzare</string>
     <string name="choice_item">Oggetti</string>
     <string name="stat_item">Statistiche degli oggetti</string>
@@ -73,4 +73,6 @@
     <string name="img_content_summoners">Incantesimi dell\'evocatore</string>
     <string name="img_content_skill">Competenze</string>
     <string name="txt_secondary_runes">Rune secondarie</string>
+    <string name="img_content_champion">Campione</string>
+    <string name="item_name">Nome del Ogetto ...</string>
 </resources>

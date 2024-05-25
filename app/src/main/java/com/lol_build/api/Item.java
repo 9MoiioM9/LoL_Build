@@ -1,9 +1,10 @@
 package com.lol_build.api;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-public class Item {
+public class Item implements Serializable {
     private String id;
     private String name;
     private String description;

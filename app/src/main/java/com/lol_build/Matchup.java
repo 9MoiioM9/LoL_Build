@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.lol_build.api.Champions;
 
@@ -21,7 +22,11 @@ import okhttp3.OkHttpClient;
 public class Matchup extends AppCompatActivity {
 
     private Spinner player_choice;
+    private TextView name_of_player_champion;
+    private TextView title_of_player_champion;
     private Spinner enemy_choice;
+    private TextView name_of_enemy_champion;
+    private TextView title_of_enemy_champion;
     private Button confirm_button;
     private Button back_button;
     private ImageView player_img;
@@ -36,6 +41,10 @@ public class Matchup extends AppCompatActivity {
 
 
         player_choice = findViewById(R.id.spinner_player);
+        name_of_player_champion = findViewById(R.id.name_of_player_champion);
+        title_of_player_champion = findViewById(R.id.title_of_player_champion);
+        name_of_enemy_champion = findViewById(R.id.name_of_enemy_champion);
+        title_of_enemy_champion = findViewById(R.id.title_of_enemy_champion);
         enemy_choice = findViewById(R.id.spinner_enemy);
         confirm_button = findViewById(R.id.b_confirm_matchup);
         back_button = findViewById(R.id.b_back_matchup);
@@ -57,15 +66,12 @@ public class Matchup extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 new Thread(() -> {
 
-                    String jsonData;
-                    OkHttpClient client = new OkHttpClient();
-                    String selected_champion = HomePage.champions
-                            .get(position) //+ 1)
-                            .getId();
+                    Champions selected_champion = HomePage.champions
+                            .get(position); //+ 1
 
                     if(selected_champion != null) {
 
-                        String img_url = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/champion/"+selected_champion+".png";
+                        String img_url = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/champion/"+selected_champion.getId()+".png";
 
                         runOnUiThread(() -> {
                             ImageLoader imageLoader = new ImageLoader.Builder(getApplicationContext()).build();
@@ -73,6 +79,9 @@ public class Matchup extends AppCompatActivity {
                                     .data(img_url)
                                     .target(player_img)
                                     .build());
+
+                            name_of_player_champion.setText(selected_champion.getName());
+                            title_of_player_champion.setText(selected_champion.getTitle());
                         });
                     }
 
@@ -92,15 +101,12 @@ public class Matchup extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 new Thread(() -> {
 
-                    String jsonData;
-                    OkHttpClient client = new OkHttpClient();
-                    String selected_champion = HomePage.champions
-                            .get(position) //+ 1)
-                            .getId();
+                    Champions selected_champion = HomePage.champions
+                            .get(position); //+ 1
 
                     if(selected_champion != null) {
 
-                        String img_url = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/champion/" + selected_champion + ".png";
+                        String img_url = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/champion/" + selected_champion.getId() + ".png";
 
                         runOnUiThread(() -> {
                             ImageLoader imageLoader = new ImageLoader.Builder(getApplicationContext()).build();
@@ -108,6 +114,9 @@ public class Matchup extends AppCompatActivity {
                                     .data(img_url)
                                     .target(enemy_img)
                                     .build());
+
+                            name_of_enemy_champion.setText(selected_champion.getName());
+                            title_of_enemy_champion.setText(selected_champion.getTitle());
                         });
                     }
 

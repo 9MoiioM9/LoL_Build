@@ -30,8 +30,9 @@
             android:id="@+id/info_item_spinner"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="@+id/info_item_txt"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/info_item_txt" />
 
         <androidx.appcompat.widget.SwitchCompat
@@ -41,164 +42,50 @@
             android:text="@string/switch_item"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/info_item_spinner"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/info_item_spinner"
+            app:layout_constraintEnd_toEndOf="@+id/info_item_txt"
             app:layout_constraintTop_toTopOf="@+id/info_item_spinner" />
+
+        <AutoCompleteTextView
+            android:id="@+id/AC_search_item"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/item_name"
+            app:layout_constraintStart_toStartOf="@+id/info_item_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/info_item_spinner" />
+
+        <Button
+            android:id="@+id/btn_searchItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_Search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/AC_search_item"
+            app:layout_constraintTop_toTopOf="@+id/AC_search_item" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer_Result_Item"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/info_item_back"
-        app:layout_constraintDimensionRatio="0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/entete">
+        app:layout_constraintTop_toBottomOf="@+id/entete" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/icon_info_item"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="10dp"
-                android:contentDescription="@string/txt_none"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@android:drawable/ic_menu_help" />
-
-            <TextView
-                android:id="@+id/NameItem_info_item"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/name_item"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/icon_info_item"
-                app:layout_constraintStart_toStartOf="@+id/icon_info_item"
-                app:layout_constraintTop_toBottomOf="@+id/icon_info_item" />
-
-            <TextView
-                android:id="@+id/t_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/desc_item"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/NameItem_info_item" />
-
-            <TextView
-                android:id="@+id/desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="50dp"
-                android:text="@string/txt_none"
-                android:textAlignment="viewStart"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/t_desc"
-                app:layout_constraintTop_toBottomOf="@+id/t_desc" />
-
-            <TextView
-                android:id="@+id/t_tags"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:text="@string/item_tags"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/t_desc"
-                app:layout_constraintTop_toBottomOf="@+id/desc" />
-
-            <TextView
-                android:id="@+id/tags"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:text="@string/txt_none"
-                android:textAlignment="viewStart"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                app:layout_constraintStart_toStartOf="@+id/t_tags"
-                app:layout_constraintTop_toBottomOf="@+id/t_tags" />
-
-            <TextView
-                android:id="@+id/t_gold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:text="@string/item_cost"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/t_tags"
-                app:layout_constraintTop_toBottomOf="@+id/tags" />
-
-            <TextView
-                android:id="@+id/gold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_weight="1"
-                android:text="@string/txt_none"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@+id/t_gold"
-                app:layout_constraintTop_toTopOf="@+id/t_gold" />
-
-            <TextView
-                android:id="@+id/t_sell"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:text="@string/item_sell"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/t_gold"
-                app:layout_constraintTop_toBottomOf="@+id/t_gold" />
-
-            <TextView
-                android:id="@+id/sell"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_weight="1"
-                android:text="@string/txt_none"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@+id/t_sell"
-                app:layout_constraintTop_toTopOf="@+id/t_sell" />
-
-            <Button
-                android:id="@+id/info_item_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/btn_back_appearance"
-                android:text="@string/b_back"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/t_sell" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    <Button
+        android:id="@+id/info_item_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/btn_back_appearance"
+        android:text="@string/b_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

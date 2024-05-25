@@ -9,8 +9,8 @@
     <string name="b_item">Items</string>
     <string name="b_champion">Champions</string>
     <string name="choice_matchup">Matchup de la partie</string>
-    <string name="choice_player">Votre choix :</string>
-    <string name="choice_enemy">Choix ennemi :</string>
+    <string name="choice_player">Votre Champion</string>
+    <string name="choice_enemy">Champion ennemi</string>
     <string name="search_items">Choississez un item à analyser</string>
     <string name="choice_item">Items ...</string>
     <string name="stat_item">Statistiques de l\'item</string>
@@ -73,4 +73,6 @@
     <string name="img_content_summoners">Sort Invocateur</string>
     <string name="img_content_skill">Compétence</string>
     <string name="txt_secondary_runes">Runes secondaires</string>
+    <string name="img_content_champion">Icon de Champion</string>
+    <string name="item_name">Nom de l\'item ...</string>
 </resources>

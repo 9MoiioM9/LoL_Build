@@ -9,8 +9,8 @@
     <string name="b_item">Items</string>
     <string name="b_champion">Champions</string>
     <string name="choice_matchup">Matchup of the game</string>
-    <string name="choice_player">Your choice :</string>
-    <string name="choice_enemy">Enemy choice :</string>
+    <string name="choice_player">Your Champion</string>
+    <string name="choice_enemy">Enemy Champion</string>
     <string name="search_items">Choose an item to check</string>
     <string name="choice_item">Items ...</string>
     <string name="stat_item">Item\'s statistics</string>
@@ -84,4 +84,7 @@
     <string name="img_content_summoners">Summoner</string>
     <string name="img_content_skill">Skill</string>
     <string name="txt_secondary_runes">Secondary Runes</string>
+    <string name="img_content_champion">Champion\'s icon</string>
+    <string name="default_img_content" translatable="false">img</string>
+    <string name="item_name">Item\'s Name ...</string>
 </resources>
