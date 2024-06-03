@@ -42,7 +42,7 @@
                 android:id="@+id/switch_info_item"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="@string/switch_item"
+                android:text="@string/all_Items"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/info_item_spinner"
                 app:layout_constraintEnd_toEndOf="parent"

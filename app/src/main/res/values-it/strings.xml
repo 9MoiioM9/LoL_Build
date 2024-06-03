@@ -34,7 +34,7 @@
     <string name="item_cost">Comprare oro :</string>
     <string name="item_sell">Vendite di oro :</string>
     <string name="txt_none">No</string>
-    <string name="switch_item">Tutti</string>
+    <string name="all_Items">Tutti</string>
     <string name="stats_champion_txt">Statistiche del campione</string>
     <string name="role_top">Superiore</string>
     <string name="role_jg">Giugla</string>
@@ -75,4 +75,8 @@
     <string name="txt_secondary_runes">Rune secondarie</string>
     <string name="img_content_champion">Campione</string>
     <string name="item_name">Nome del Ogetto ...</string>
+    <string name="rb_map11">Map</string>
+    <string name="rb_mode">Mappe speciali</string>
+    <string name="txt_achetable">Acquistati</string>
+    <string name="txt_choice_map">Scelta della Mappa</string>
 </resources>

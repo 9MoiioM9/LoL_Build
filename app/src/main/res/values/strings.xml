@@ -37,7 +37,7 @@
     <string name="item_cost">Gold Cost :</string>
     <string name="item_sell">Gold Sell :</string>
     <string name="txt_none">None</string>
-    <string name="switch_item">"All "</string>
+    <string name="all_Items">"All "</string>
     <string name="stats_champion_txt">Champion\'s statistics</string>
     <string name="role_top">Top</string>
     <string name="role_jg">JG</string>
@@ -87,4 +87,12 @@
     <string name="img_content_champion">Champion\'s icon</string>
     <string name="default_img_content" translatable="false">img</string>
     <string name="item_name">Item\'s Name ...</string>
+    <string name="rb_map11">Default Map</string>
+    <string name="rb_map12" translatable="false">Aram</string>
+    <string name="rb_map22" translatable="false">\??</string>
+    <string name="rb_map21" translatable="false">\?</string>
+    <string name="rb_map30" translatable="false">Arena</string>
+    <string name="rb_mode">Specials Map</string>
+    <string name="txt_achetable">Purchasable</string>
+    <string name="txt_choice_map">Map\'s choice</string>
 </resources>

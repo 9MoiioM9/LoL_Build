@@ -13,6 +13,7 @@ public class Item implements Serializable {
     private Image image;
     private Gold gold;
     private List<String> tags;
+    private Map<String, Boolean> maps;
 
     //Getter used
     public String getId() {
@@ -86,5 +87,15 @@ public class Item implements Serializable {
             return purchasable;
         }
     }
+
+    public Map<String, Boolean> getMaps() {
+        return maps;
+    }
+
+    // Method to check if the item is available on a specific map
+    public boolean isAvailableOnMap(String mapId) {
+        return maps.getOrDefault(mapId, false);
+    }
+
 }
 

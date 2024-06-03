@@ -34,7 +34,7 @@
     <string name="item_cost">Gold d\'achat :</string>
     <string name="item_sell">Gold de vente :</string>
     <string name="txt_none">Aucun</string>
-    <string name="switch_item">"Tous "</string>
+    <string name="all_Items">"Tous "</string>
     <string name="stats_champion_txt">Statistiques du champion</string>
     <string name="role_top">Top</string>
     <string name="role_jg">JG</string>
@@ -75,4 +75,8 @@
     <string name="txt_secondary_runes">Runes secondaires</string>
     <string name="img_content_champion">Icon de Champion</string>
     <string name="item_name">Nom de l\'item ...</string>
+    <string name="rb_map11">Map par defaut</string>
+    <string name="rb_mode">Map spéciales</string>
+    <string name="txt_achetable">Achetable</string>
+    <string name="txt_choice_map">Choix de la Map</string>
 </resources>
