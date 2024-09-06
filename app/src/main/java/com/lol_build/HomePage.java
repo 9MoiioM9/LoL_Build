@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -64,6 +65,7 @@ public class HomePage extends AppCompatActivity {
 
     private Button search_profil_button;
     private Button btn_param;
+    private TextView patch_Note;
 
 
     @Override
@@ -86,6 +88,7 @@ public class HomePage extends AppCompatActivity {
         champ_button = findViewById(R.id.b_champion);
         quit_button = findViewById(R.id.b_quit);
         btn_param = findViewById(R.id.param_homepage);
+        patch_Note = findViewById(R.id.txt_patchNote);
 
 
         img_homepage = findViewById(R.id.img_homepage_lol);
@@ -119,6 +122,11 @@ public class HomePage extends AppCompatActivity {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
+            runOnUiThread(() -> {
+                String patch_note = "Patch "+VERSION;
+                patch_Note.setText(patch_note);
+            });
 
             loadData();
 
