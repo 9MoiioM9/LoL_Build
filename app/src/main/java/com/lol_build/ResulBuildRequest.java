@@ -79,6 +79,8 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
         loadImg(runes.get(1), resultBuild.rune2);
         loadImg(runes.get(2), resultBuild.rune3);
         loadImg(runes.get(3), resultBuild.rune4);
+        loadImg(runes.get(4), resultBuild.rune5);
+        loadImg(runes.get(5), resultBuild.rune6);
         Log.d(HomePage.Tag, "Items ...");
         loadImg(item_URL+items_rec.get(0)+".png", resultBuild.item1);
         loadImg(item_URL+items_rec.get(1)+".png", resultBuild.item2);
@@ -152,13 +154,23 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
 
             Log.w(HomePage.Tag, "Rune :  ");
 
-
+            Log.w(HomePage.Tag, "Primary Runes : ");
+            //Primary Runes
             Elements div_PrimaryRune = document.select("div.rune-tree_v2.primary-tree");
-            //Ici Take the first elements to take only the 4 runes needed because in the HTML page there are two Element with the same
+            //Take the first elements to take only the 4 runes needed because in the HTML page there are two Element with the same id
             Elements img_elements = div_PrimaryRune.get(0).select("div.perk-row div.perks div.perk.perk-active img");
             for (Element img_element : img_elements) {
                 String src = img_element.attr("src");
-                Log.w(HomePage.Tag, "Src : " + src);
+
+                runes.add(src);
+            }
+            Log.w(HomePage.Tag, "Secondary Runes : ");
+            //Secondary Runes
+            Elements div_SecondaryRune = document.select("div.secondary-tree div.rune-tree_v2");
+            //Take the first elements to take only the 4 runes needed because in the HTML page there are two Element with the same id
+            img_elements = div_SecondaryRune.get(0).select("div.perk-row div.perks div.perk.perk-active img");
+            for (Element img_element : img_elements) {
+                String src = img_element.attr("src");
 
                 runes.add(src);
             }
@@ -186,12 +198,12 @@ public class ResulBuildRequest extends AsyncTask<Void,Integer,Void> {
                 Elements div_ListItems = div_ItemsUsed.select("div.m-yhe5ws");
                 for (Element itemInfo : div_ListItems) {
                     List<Elements> list_items = new ArrayList<>();
-                    list_items.add(div_ItemsUsed.select("div.m-cnu2sv"));
-                    list_items.add(div_ItemsUsed.select("div.m-6n5cp5"));
-                    list_items.add(div_ItemsUsed.select("div.m-1t36u2t"));
-                    list_items.add(div_ItemsUsed.select("div.m-7dime2"));
-                    list_items.add(div_ItemsUsed.select("div.m-1xra8sf"));
-                    list_items.add(div_ItemsUsed.select("div.m-vwozlc"));
+                    list_items.add(div_ItemsUsed.select("div.m-rfjm2i"));
+                    list_items.add(div_ItemsUsed.select("div.m-juatvp"));
+                    list_items.add(div_ItemsUsed.select("div.m-3ygoqp"));
+                    list_items.add(div_ItemsUsed.select("div.m-1rjh3a6"));
+                    list_items.add(div_ItemsUsed.select("div.m-1egdgno"));
+                    list_items.add(div_ItemsUsed.select("div.m-8x1gh3"));
 
                     for(Elements it : list_items){
                         Elements item = it.select("div img");

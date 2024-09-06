@@ -11,12 +11,13 @@
         android:id="@+id/background_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_foreground"
+        android:contentDescription="@string/img_content_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:scaleType="centerCrop" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/result_build_txt"
@@ -35,7 +36,7 @@
         android:id="@+id/txt_wr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:text="@string/txt_WinRate"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/result_build_txt"
@@ -45,6 +46,7 @@
         android:id="@+id/winRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
         android:text="@string/txt_none"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,23 +76,26 @@
 
         <ImageView
             android:id="@+id/skill_1"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_skill"
             android:src="@drawable/lol_loading" />
 
         <ImageView
             android:id="@+id/skill_2"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_skill"
             android:src="@drawable/lol_loading" />
 
         <ImageView
             android:id="@+id/skill_3"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_skill"
             android:src="@drawable/lol_loading" />
     </LinearLayout>
 
@@ -118,16 +123,18 @@
 
         <ImageView
             android:id="@+id/summs_1"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_summoners"
             android:src="@drawable/lol_loading" />
 
         <ImageView
             android:id="@+id/summs_2"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_summoners"
             android:src="@drawable/lol_loading" />
     </LinearLayout>
 
@@ -158,6 +165,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_item"
             android:src="@drawable/lol_loading" />
 
         <ImageView
@@ -165,6 +173,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_item"
             android:src="@drawable/lol_loading" />
 
         <ImageView
@@ -172,6 +181,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_item"
             android:src="@drawable/lol_loading" />
 
         <ImageView
@@ -179,6 +189,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_item"
             android:src="@drawable/lol_loading" />
 
         <ImageView
@@ -186,6 +197,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_item"
             android:src="@drawable/lol_loading" />
 
         <ImageView
@@ -193,57 +205,98 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_item"
             android:src="@drawable/lol_loading" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/runes_txt"
+        android:id="@+id/primary_runes_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="25dp"
-        android:text="@string/txt_runes"
+        android:text="@string/txt_primary_runes"
         android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Items_recommended" />
 
     <LinearLayout
-        android:id="@+id/runes_recommended"
+        android:id="@+id/primary_runes_recommended"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/runes_txt">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/primary_runes_txt"
+        app:layout_constraintStart_toStartOf="@+id/primary_runes_txt"
+        app:layout_constraintTop_toBottomOf="@+id/primary_runes_txt">
 
         <ImageView
             android:id="@+id/rune_1"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_rune"
             android:src="@drawable/lol_loading" />
 
         <ImageView
             android:id="@+id/sous_rune1"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_rune"
             android:src="@drawable/lol_loading" />
 
         <ImageView
             android:id="@+id/sous_rune2"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_rune"
             android:src="@drawable/lol_loading" />
 
         <ImageView
             android:id="@+id/sous_rune3"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_weight="1"
+            android:contentDescription="@string/img_content_rune"
+            android:src="@drawable/lol_loading" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/secondary_runes_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_secondary_runes"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/primary_runes_txt"
+        app:layout_constraintTop_toTopOf="@+id/primary_runes_txt" />
+
+    <LinearLayout
+        android:id="@+id/secondray_runes_recommended"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/secondary_runes_txt"
+        app:layout_constraintStart_toStartOf="@+id/secondary_runes_txt"
+        app:layout_constraintTop_toBottomOf="@+id/secondary_runes_txt">
+
+        <ImageView
+            android:id="@+id/sous_rune4"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:contentDescription="@string/img_content_rune"
+            android:src="@drawable/lol_loading" />
+
+        <ImageView
+            android:id="@+id/sous_rune5"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:contentDescription="@string/img_content_rune"
             android:src="@drawable/lol_loading" />
     </LinearLayout>
 

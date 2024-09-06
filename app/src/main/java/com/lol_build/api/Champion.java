@@ -1,65 +1,46 @@
 package com.lol_build.api;
-import java.io.Serializable;
+
 import java.util.List;
 
-public class Champion implements Serializable {
-    private String version;
+public class Champion {
     private String id;
     private String key;
     private String name;
     private String title;
-    private String blurb;
-    private Info info;
     private Image image;
+    private List<Skin> skins;
+    private String lore;
+    private String blurb;
+    private List<String> allytips;
+    private List<String> enemytips;
     private List<String> tags;
     private String partype;
+    private Info info;
     private Stats stats;
+    private List<Spell> spells;
+    private Passive passive;
 
-    public String getId(){
-        return id;
-    }
-
-    public String getName(){
-        return name;
-    }
-    public Stats getStats() {
-        return stats;
-    }
-    public String getTitle() {
-        return title;
-    }
-    public String getPartype(){
-        return partype;
-    }
-    public String getFullFromImage(){
-        return image.getFull();
+    // Inner classes to represent nested objects
+    public static class Image {
+        private String full;
+        private String group;
     }
 
+    public static class Skin {
+        private String id;
+        private int num;
+        private String name;
+        private boolean chromas;
+    }
 
-    public static class Info implements Serializable{
+    public static class Info {
         private int attack;
         private int defense;
         private int magic;
         private int difficulty;
-
     }
 
-    public static class Image implements Serializable{
-        private String full;
-        private String sprite;
-        private String group;
-        private int x;
-        private int y;
-        private int w;
-        private int h;
-
-        public String getFull(){
-            return full;
-        }
-
-    }
-
-    public static class Stats implements Serializable{
+    public static class Stats {
         private int hp;
         private int hpperlevel;
         private int mp;
@@ -70,8 +51,8 @@ public class Champion implements Serializable {
         private int spellblock;
         private double spellblockperlevel;
         private int attackrange;
-        private int hpregen;
-        private int hpregenperlevel;
+        private double hpregen;
+        private double hpregenperlevel;
         private int mpregen;
         private int mpregenperlevel;
         private int crit;
@@ -80,34 +61,48 @@ public class Champion implements Serializable {
         private int attackdamageperlevel;
         private double attackspeedperlevel;
         private double attackspeed;
+    }
 
-        public int getHp() {
-            return hp;
-        }
+    public static class Spell {
+        private String id;
+        private String name;
+        private String description;
+        private String tooltip;
+        private LevelTip leveltip;
+        private int maxrank;
+        private List<Integer> cooldown;
+        private String cooldownBurn;
+        private List<Integer> cost;
+        private String costBurn;
+        private List<List<Integer>> effect;
+        private List<String> effectBurn;
+        private String costType;
+        private int maxammo;
+        private List<Integer> range;
+        private String rangeBurn;
+        private SpellImage image;
+        private String resource;
+    }
 
-        public int getMp() {
-            return mp;
-        }
+    public static class LevelTip {
+        private List<String> label;
+        private List<String> effect;
+    }
 
-        public int getMovespeed() {
-            return movespeed;
-        }
+    public static class SpellImage {
+        private String full;
+        private String group;
+    }
 
-        public int getArmor() {
-            return armor;
-        }
+    public static class Passive {
+        private String name;
+        private String description;
+        private PassiveImage image;
+    }
 
-        public int getSpellblock() {
-            return spellblock;
-        }
+    public static class PassiveImage {
+        private String full;
+        private String group;
 
-        public double getAttackspeed() {
-            return attackspeed;
-        }
-
-        public int getAttackdamage() {
-            return attackdamage;
-        }
     }
 }
-

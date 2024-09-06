@@ -19,22 +19,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/b_back_matchup"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="15dp"
-        android:text="@string/b_back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
-        android:id="@+id/txt_test"
-        android:layout_width="150dp"
+        android:id="@+id/txt_playerChoice"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="@string/choice_player"
         android:textAlignment="center"
         android:textSize="16sp"
@@ -43,8 +33,8 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_matchup" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="150dp"
+        android:id="@+id/txt_enemyChoice"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="15dp"
@@ -57,24 +47,116 @@
 
     <Spinner
         android:id="@+id/spinner_player"
-        android:layout_width="270dp"
-        android:layout_height="70dp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
         android:layout_marginTop="5dp"
         android:scrollbarSize="10dp"
         android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@+id/txt_playerChoice"
+        app:layout_constraintTop_toBottomOf="@+id/txt_playerChoice" />
+
+    <ImageView
+        android:id="@+id/champion_player"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/img_content_champion"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/spinner_player"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_player"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <LinearLayout
+        android:id="@+id/LV_player_choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/champion_player"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/champion_player"
+        app:layout_constraintTop_toTopOf="@+id/champion_player">
+
+        <TextView
+            android:id="@+id/name_of_player_champion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/txt_none"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/title_of_player_champion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_none"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="-10dp"
+        android:contentDescription="@string/default_img_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_test" />
+        app:layout_constraintTop_toBottomOf="@+id/champion_player"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <ImageView
+        android:id="@+id/champion_enemy"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="-10dp"
+        android:contentDescription="@string/img_content_champion"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_enemy"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <Spinner
         android:id="@+id/spinner_enemy"
-        android:layout_width="270dp"
-        android:layout_height="70dp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txt_enemyChoice"
         app:layout_constraintTop_toBottomOf="@+id/champion_enemy" />
+
+    <LinearLayout
+        android:id="@+id/LV_enemy_choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/champion_enemy"
+        app:layout_constraintEnd_toStartOf="@+id/champion_enemy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/champion_enemy">
+
+        <TextView
+            android:id="@+id/name_of_enemy_champion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/txt_none"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/title_of_enemy_champion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_none"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/b_confirm_matchup"
@@ -86,38 +168,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="-10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/champion_player"
-        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
-
-    <ImageView
-        android:id="@+id/champion_player"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/txt_test"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_player"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
-
-    <ImageView
-        android:id="@+id/champion_enemy"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="-10dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+    <Button
+        android:id="@+id/b_back_matchup"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/btn_back_appearance"
+        android:text="@string/b_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

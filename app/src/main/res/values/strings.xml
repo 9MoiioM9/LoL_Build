@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">LoL_Build</string>
-    <string name="text_select_champ">Enter Champion\'s name</string>
+    <string name="app_name" translatable="false">LoL_Build</string>
+    <string name="text_select_champ">Champion\'s name ...</string>
     <string name="edit_text_champ">Enter name</string>
     <string name="b_next">Next</string>
     <string name="b_exit">Exit</string>
@@ -9,8 +9,8 @@
     <string name="b_item">Items</string>
     <string name="b_champion">Champions</string>
     <string name="choice_matchup">Matchup of the game</string>
-    <string name="choice_player">Your choice :</string>
-    <string name="choice_enemy">Enemy choice :</string>
+    <string name="choice_player">Your Champion</string>
+    <string name="choice_enemy">Enemy Champion</string>
     <string name="search_items">Choose an item to check</string>
     <string name="choice_item">Items ...</string>
     <string name="stat_item">Item\'s statistics</string>
@@ -20,10 +20,10 @@
     <string name="b_confirm">Confirm</string>
     <string name="select_role_txt">Select your Role</string>
     <string name="info_champion_txt">Select a champion to search :</string>
-    <string name="empty_stat">0</string>
+    <string name="empty_stat" translatable="false">0</string>
     <string name="armor">Armor :</string>
     <string name="rm">Rm :</string>
-    <string name="atk">Ad :</string>
+    <string name="atk" translatable="false">Ad :</string>
     <string name="ap">Ap :</string>
     <string name="AS">AS :</string>
     <string name="speed">Speed :</string>
@@ -33,35 +33,66 @@
     <string name="info_item_txt">Select an Item to search :</string>
     <string name="search_item_txt">Item\'s name ...</string>
     <string name="item_into">Into these Items :</string>
-    <string name="item_tags">Tags :</string>
+    <string name="item_tags" translatable="false">Tags :</string>
     <string name="item_cost">Gold Cost :</string>
     <string name="item_sell">Gold Sell :</string>
     <string name="txt_none">None</string>
-    <string name="switch_item">"All "</string>
+    <string name="all_Items">"All "</string>
     <string name="stats_champion_txt">Champion\'s statistics</string>
     <string name="role_top">Top</string>
     <string name="role_jg">JG</string>
     <string name="role_mid">Mid</string>
     <string name="role_Bot">Bot</string>
-    <string name="role_adc">Adc</string>
+    <string name="role_adc" translatable="false">Adc</string>
     <string name="role_support">Supp</string>
     <string name="result_build_txt">Result of the matchup</string>
     <string name="txt_skills_order">Skills Order :</string>
     <string name="txt_summs">Summoner spells :</string>
     <string name="txt_itemsbuild">Build recommended for the game :</string>
-    <string name="txt_runes">Primary Runes :</string>
+    <string name="txt_primary_runes">Primary Runes</string>
     <string name="txt_WinRate">WinRate :</string>
-    <string name="text_pseudo">Enter a pseudo</string>
-    <string name="in_pseudo" translatable="false">pseudo</string>
-    <string name="search_pseudo">Search</string>
+    <string name="txt_match_history">Matchs\'s History of :</string>
+    <string name="player_name" translatable="false">Username</string>
     <string name="b_search_profil">Search a player</string>
     <string name="role_select_db">Role :</string>
     <string name="championP_db">Your champion :</string>
     <string name="championE_db">Enemy :</string>
     <string name="save_btn">Save</string>
     <string name="btn_load_db">Load the save</string>
-    <string name="txt_Preferencies">Welcome in Preferencies</string>
+    <string name="txt_Preferencies">Change your parameters here :</string>
     <string name="btn_Search">Search</string>
     <string name="stillProgess">Coming soon ...</string>
     <string name="btn_share">Share</string>
+    <string name="player_tag" translatable="false">Tag : #</string>
+    <string name="ex_tags" translatable="false">EUW</string>
+    <string name="btn_match_history">Matchs history ...</string>
+    <string name="txt_info_player">Player\'s Informations</string>
+    <string name="vide" translatable="false"></string>
+    <string name="btn_history">Your Matchups</string>
+    <string name="btn_param">Parameters</string>
+    <string name="txt_userH">Your saved Matchups</string>
+    <string name="txt_param_langue">"Language : "</string>
+    <string name="rb_fr">French</string>
+    <string name="rb_en">English</string>
+    <string name="rb_it">Italian</string>
+    <string name="rb_en_US" translatable="false">US</string>
+    <string name="rb_en_GB" translatable="false">GB</string>
+    <string name="btn_apply">Apply</string>
+    <string name="img_content_back">background</string>
+    <string name="img_content_item">Item</string>
+    <string name="img_content_rune" translatable="false">Rune</string>
+    <string name="img_content_summoners">Summoner</string>
+    <string name="img_content_skill">Skill</string>
+    <string name="txt_secondary_runes">Secondary Runes</string>
+    <string name="img_content_champion">Champion\'s icon</string>
+    <string name="default_img_content" translatable="false">img</string>
+    <string name="item_name">Item\'s Name ...</string>
+    <string name="rb_map11">Default Map</string>
+    <string name="rb_map12" translatable="false">Aram</string>
+    <string name="rb_map22" translatable="false">\??</string>
+    <string name="rb_map21" translatable="false">\?</string>
+    <string name="rb_map30" translatable="false">Arena</string>
+    <string name="rb_mode">Specials Map</string>
+    <string name="txt_achetable">Purchasable</string>
+    <string name="txt_choice_map">Map\'s choice</string>
 </resources>

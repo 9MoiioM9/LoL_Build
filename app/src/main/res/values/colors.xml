@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="btn_back">#1C2541</color>
+    <color name="energy">#FED13F</color>
+    <color name="fury">#FF6347</color>
+    <color name="rage">#FFA500</color>
 </resources>

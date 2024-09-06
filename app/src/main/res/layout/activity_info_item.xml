@@ -4,160 +4,156 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Info_item">
+    tools:context=".infos.Info_item">
 
-    <TextView
-        android:id="@+id/txt_info_item"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/entete"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/info_item_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/info_item_txt"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:typeface="serif"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_choiceMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/txt_choice_map"
+            android:textAlignment="textStart"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/rg_choice_map"
+            app:layout_constraintTop_toBottomOf="@id/info_item_txt" />
+
+        <RadioGroup
+            android:id="@+id/rg_choice_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/txt_choiceMap">
+
+            <RadioButton
+                android:id="@+id/rb_all_Items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/all_Items" />
+
+            <RadioButton
+                android:id="@+id/rb_map11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rb_map11" />
+
+            <RadioButton
+                android:id="@+id/rb_map12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rb_map12" />
+
+            <RadioButton
+                android:id="@+id/rb_modeMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rb_mode" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rg_mode_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rg_choice_map">
+
+            <RadioButton
+                android:id="@+id/rb_map21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rb_map21" />
+
+            <RadioButton
+                android:id="@+id/rb_map22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rb_map22" />
+
+            <RadioButton
+                android:id="@+id/rb_map30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rb_map30" />
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/info_item_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rg_mode_map" />
+
+        <AutoCompleteTextView
+            android:id="@+id/AC_search_item"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/item_name"
+            app:layout_constraintStart_toStartOf="@+id/info_item_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/info_item_spinner" />
+
+        <Button
+            android:id="@+id/btn_searchItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_Search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/AC_search_item"
+            app:layout_constraintTop_toTopOf="@+id/info_item_spinner" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer_Result_Item"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:text="@string/info_item_txt"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:typeface="serif"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/info_item_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/entete" />
 
-    <Spinner
-        android:id="@+id/info_item_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_info_item" />
-
-    <ImageView
-        android:id="@+id/icon_item"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="10dp"
-        android:contentDescription="@string/txt_none"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/info_item_spinner"
-        app:srcCompat="@android:drawable/ic_menu_help" />
-
-    <TextView
-        android:id="@+id/item_name"
+    <Button
+        android:id="@+id/info_item_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="@string/name_item"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/icon_item"
-        app:layout_constraintStart_toStartOf="@+id/icon_item"
-        app:layout_constraintTop_toBottomOf="@+id/icon_item" />
-
-    <TextView
-        android:id="@+id/t_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="@string/desc_item"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_name" />
-
-    <TextView
-        android:id="@+id/desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="@string/txt_none"
-        android:textAlignment="viewStart"
-        android:textSize="16sp"
-        android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="@+id/t_desc"
-        app:layout_constraintTop_toBottomOf="@+id/t_desc" />
-
-    <TextView
-        android:id="@+id/t_tags"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
-        android:text="@string/item_tags"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/t_desc"
-        app:layout_constraintTop_toBottomOf="@+id/desc" />
-
-    <TextView
-        android:id="@+id/tags"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_weight="1"
-        android:text="@string/txt_none"
-        android:textAlignment="viewStart"
-        android:textSize="16sp"
-        android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="@+id/t_tags"
-        app:layout_constraintTop_toBottomOf="@+id/t_tags" />
-
-    <TextView
-        android:id="@+id/t_gold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
-        android:text="@string/item_cost"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/t_tags"
-        app:layout_constraintTop_toBottomOf="@+id/tags" />
-
-    <TextView
-        android:id="@+id/gold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_weight="1"
-        android:text="@string/txt_none"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/t_gold"
-        app:layout_constraintTop_toTopOf="@+id/t_gold" />
-
-    <TextView
-        android:id="@+id/t_sell"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
-        android:text="@string/item_sell"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/t_gold"
-        app:layout_constraintTop_toBottomOf="@+id/t_gold" />
-
-    <TextView
-        android:id="@+id/sell"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_weight="1"
-        android:text="@string/txt_none"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/t_sell"
-        app:layout_constraintTop_toTopOf="@+id/t_sell" />
-
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch_info_item"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="@string/switch_item"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/info_item_spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/info_item_spinner"
-        app:layout_constraintTop_toTopOf="@+id/info_item_spinner" />
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/btn_back_appearance"
+        android:text="@string/b_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

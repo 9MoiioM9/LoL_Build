@@ -206,26 +206,26 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/runes_txt"
+                android:id="@+id/primary_runes_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/txt_runes"
+                android:text="@string/txt_primary_runes"
                 android:textSize="16sp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Items_recommended" />
 
             <LinearLayout
-                android:id="@+id/runes_recommended"
+                android:id="@+id/primary_runes_recommended"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/runes_txt">
+                app:layout_constraintTop_toBottomOf="@+id/primary_runes_txt">
 
                 <ImageView
                     android:id="@+id/rune_1"
@@ -256,29 +256,6 @@
                     android:src="@drawable/lol_loading" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/sous_runes_recommended"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/runes_recommended"
-                app:layout_constraintTop_toBottomOf="@+id/runes_recommended">
-
-                <ImageView
-                    android:id="@+id/sous_rune4"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/lol_loading" />
-
-                <ImageView
-                    android:id="@+id/sous_rune5"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/lol_loading" />
-            </LinearLayout>
-
             <Button
                 android:id="@+id/back_btn"
                 android:layout_width="wrap_content"
@@ -286,8 +263,8 @@
                 android:layout_marginTop="112dp"
                 android:layout_marginEnd="108dp"
                 android:text="@string/b_back"
-                app:layout_constraintEnd_toStartOf="@+id/runes_recommended"
-                app:layout_constraintTop_toBottomOf="@+id/runes_txt" />
+                app:layout_constraintEnd_toStartOf="@+id/primary_runes_recommended"
+                app:layout_constraintTop_toBottomOf="@+id/primary_runes_txt" />
 
             <Button
                 android:id="@+id/save_button"

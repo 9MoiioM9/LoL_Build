@@ -15,13 +15,25 @@
         android:theme="@style/Theme.LoL_Build"
         tools:targetApi="31">
         <activity
-            android:name=".Search_profil"
+            android:name=".Result_Item_Fragment"
+            android:exported="false" />
+        <activity
+            android:name=".infos.Preferencies"
+            android:exported="false" />
+        <activity
+            android:name=".infos.Matchs_History"
+            android:exported="false" />
+        <activity
+            android:name=".Item_match"
+            android:exported="false" />
+        <activity
+            android:name=".infos.Info_Player"
             android:exported="false" />
         <activity
             android:name=".champion_item"
             android:exported="false" />
         <activity
-            android:name=".Info_champion"
+            android:name=".infos.Info_champion"
             android:exported="false" />
         <activity
             android:name=".Result_Build"
@@ -30,10 +42,10 @@
             android:name=".Matchup"
             android:exported="false" />
         <activity
-            android:name=".Info_item"
+            android:name=".infos.Info_item"
             android:exported="false" />
         <activity
-            android:name=".Preferencies"
+            android:name=".infos.User_History"
             android:exported="false" />
         <activity
             android:name=".Selection_Role"

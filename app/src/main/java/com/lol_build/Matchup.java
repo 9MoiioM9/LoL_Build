@@ -3,9 +3,7 @@ package com.lol_build;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,26 +11,22 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.lol_build.api.Champion;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import com.lol_build.api.Champions;
 
 import coil.ImageLoader;
 import coil.request.ImageRequest;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 public class Matchup extends AppCompatActivity {
 
     private Spinner player_choice;
+    private TextView name_of_player_champion;
+    private TextView title_of_player_champion;
     private Spinner enemy_choice;
+    private TextView name_of_enemy_champion;
+    private TextView title_of_enemy_champion;
     private Button confirm_button;
     private Button back_button;
     private ImageView player_img;
@@ -47,6 +41,10 @@ public class Matchup extends AppCompatActivity {
 
 
         player_choice = findViewById(R.id.spinner_player);
+        name_of_player_champion = findViewById(R.id.name_of_player_champion);
+        title_of_player_champion = findViewById(R.id.title_of_player_champion);
+        name_of_enemy_champion = findViewById(R.id.name_of_enemy_champion);
+        title_of_enemy_champion = findViewById(R.id.title_of_enemy_champion);
         enemy_choice = findViewById(R.id.spinner_enemy);
         confirm_button = findViewById(R.id.b_confirm_matchup);
         back_button = findViewById(R.id.b_back_matchup);
@@ -68,15 +66,12 @@ public class Matchup extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 new Thread(() -> {
 
-                    String jsonData;
-                    OkHttpClient client = new OkHttpClient();
-                    String selected_champion = HomePage.champions
-                            .get(position) //+ 1)
-                            .getId();
+                    Champions selected_champion = HomePage.champions
+                            .get(position); //+ 1
 
                     if(selected_champion != null) {
 
-                        String img_url = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/champion/"+selected_champion+".png";
+                        String img_url = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/champion/"+selected_champion.getId()+".png";
 
                         runOnUiThread(() -> {
                             ImageLoader imageLoader = new ImageLoader.Builder(getApplicationContext()).build();
@@ -84,6 +79,9 @@ public class Matchup extends AppCompatActivity {
                                     .data(img_url)
                                     .target(player_img)
                                     .build());
+
+                            name_of_player_champion.setText(selected_champion.getName());
+                            title_of_player_champion.setText(selected_champion.getTitle());
                         });
                     }
 
@@ -103,15 +101,12 @@ public class Matchup extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 new Thread(() -> {
 
-                    String jsonData;
-                    OkHttpClient client = new OkHttpClient();
-                    String selected_champion = HomePage.champions
-                            .get(position) //+ 1)
-                            .getId();
+                    Champions selected_champion = HomePage.champions
+                            .get(position); //+ 1
 
                     if(selected_champion != null) {
 
-                        String img_url = "https://ddragon.leagueoflegends.com/cdn/14.7.1/img/champion/" + selected_champion + ".png";
+                        String img_url = "https://ddragon.leagueoflegends.com/cdn/"+HomePage.VERSION+"/img/champion/" + selected_champion.getId() + ".png";
 
                         runOnUiThread(() -> {
                             ImageLoader imageLoader = new ImageLoader.Builder(getApplicationContext()).build();
@@ -119,6 +114,9 @@ public class Matchup extends AppCompatActivity {
                                     .data(img_url)
                                     .target(enemy_img)
                                     .build());
+
+                            name_of_enemy_champion.setText(selected_champion.getName());
+                            title_of_enemy_champion.setText(selected_champion.getTitle());
                         });
                     }
 
@@ -159,29 +157,26 @@ public class Matchup extends AppCompatActivity {
         confirm_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                go_result_build(v);
+                Intent intent = new Intent(Matchup.this, Result_Build.class);
+                intent.putExtra("player_champion",
+                        HomePage.champions
+                                .get(player_choice.getSelectedItemPosition()));
+
+                intent.putExtra("enemy_champion",
+                        HomePage.champions
+                                .get(enemy_choice.getSelectedItemPosition()));
+
+                startActivity(intent);
             }
         });
     }
 
-    public void launchItemChampion(Champion selected_champion){
+    public void launchItemChampion(Champions selected_champion){
         Intent intent = new Intent(Matchup.this, champion_item.class);
         intent.putExtra("champion", selected_champion);
         startActivity(intent);
     }
 
-    public void go_result_build(View v){
-        Intent intent = new Intent(Matchup.this, Result_Build.class);
-        intent.putExtra("player_champion",
-                HomePage.champions
-                        .get(player_choice.getSelectedItemPosition()));
 
-        intent.putExtra("enemy_champion",
-                HomePage.champions
-                        .get(enemy_choice.getSelectedItemPosition()));
-
-
-        startActivity(intent);
-    }
 
 }
