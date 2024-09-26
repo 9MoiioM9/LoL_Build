@@ -20,17 +20,80 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/txt_select_role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:typeface="serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_matchup"
+        tools:text="@string/select_role_txt" />
+
+    <RadioGroup
+        android:id="@+id/radioGrp_Role"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_select_role">
+
+        <RadioButton
+            android:id="@+id/rb_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/role_top"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rb_jg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/role_jg"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rb_mid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/role_mid"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rb_adc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/role_adc"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rb_supp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/role_support"
+            android:textSize="20sp" />
+    </RadioGroup>
+
+    <TextView
         android:id="@+id/txt_playerChoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:text="@string/choice_player"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_matchup" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGrp_Role" />
 
     <TextView
         android:id="@+id/txt_enemyChoice"
@@ -57,8 +120,8 @@
 
     <ImageView
         android:id="@+id/champion_player"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_marginTop="20dp"
         android:contentDescription="@string/img_content_champion"
         app:layout_constraintEnd_toStartOf="@+id/imageView3"
@@ -110,8 +173,8 @@
 
     <ImageView
         android:id="@+id/champion_enemy"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_marginTop="-10dp"
         android:contentDescription="@string/img_content_champion"
         app:layout_constraintEnd_toEndOf="@+id/spinner_enemy"

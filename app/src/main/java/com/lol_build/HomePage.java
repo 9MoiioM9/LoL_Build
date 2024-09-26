@@ -142,7 +142,7 @@ public class HomePage extends AppCompatActivity {
         machup_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this, Selection_Role.class);
+                Intent intent = new Intent(HomePage.this, Matchup.class);
                 startActivity(intent);
             }
         });

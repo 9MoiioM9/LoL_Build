@@ -59,7 +59,7 @@ public class Result_Build extends AppCompatActivity {
         player_champion = (Champions) intent.getSerializableExtra("player_champion");
         enemy_champion = (Champions) intent.getSerializableExtra("enemy_champion");
 
-        matchupData = new MatchupData(Selection_Role.ROLE, player_champion.getName(), enemy_champion.getName(), ResulBuildRequest.items_rec);
+        matchupData = new MatchupData(Matchup.ROLE, player_champion.getName(), enemy_champion.getName(), ResulBuildRequest.items_rec);
 
         background = findViewById(R.id.background_img);
         winRate = findViewById(R.id.winRate);

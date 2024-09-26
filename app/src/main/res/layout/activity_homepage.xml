@@ -40,12 +40,12 @@
         android:id="@+id/b_matchup"
         android:layout_width="180dp"
         android:layout_height="60dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="100dp"
         android:text="@string/b_matchup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/history_homepage" />
 
     <Button
         android:id="@+id/b_quit"
@@ -67,16 +67,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b_champion" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="180dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/history_homepage"
-        app:srcCompat="@drawable/lol_home" />
 
     <Button
         android:id="@+id/param_homepage"
